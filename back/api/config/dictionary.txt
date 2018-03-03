@@ -1,0 +1,30 @@
+{
+    "en":{
+        "id": "ID",
+        "phoneNum": "PhoneNum",
+        "name": "Name",
+        "gender": "Gender",
+        "breed": "Breed",
+        "age": "Age",
+        "color": "Color",
+        "weight": "Weight",
+        "height": "Height",
+        "price": "Price",
+        "classify": "Classify",
+        "addTime": "AddTime"
+    },
+    "cn":{
+        "id": "编号",
+        "phoneNum": "狗主电话",
+        "name": "狗狗名称",
+        "gender": "性别",
+        "breed": "品种",
+        "age": "年龄",
+        "color": "颜色",
+        "weight": "体重",
+        "height": "高度",
+        "price": "价格",
+        "classify": "分类",
+        "addTime": "添加时间"
+    }
+}
