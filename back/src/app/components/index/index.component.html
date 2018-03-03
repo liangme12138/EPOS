@@ -1,2 +1,91 @@
-<button nz-button [nzType]="'primary'">测试按钮</button>
-<router-outlet></router-outlet>
+<!-- <div class="header">
+    <select [(ngModel)]="common['lanType']">
+        <option value="en">en</option>
+        <option value="cn">cn</option>
+    </select>
+</div>
+<div class="body">
+    <ul class="nav">
+        <li>
+            <a routerLink="student">students</a>
+        </li>
+        <li>
+            <a routerLink="product">products</a>
+        </li>
+    </ul>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div> -->
+<nz-layout class="layout">
+    <nz-header>
+        <h3 class="header_layout">点餐系统</h3>
+    </nz-header>
+    <nz-layout>
+        <nz-sider [nzWidth]="200" style="background:#fff">
+            <ul nz-menu [nzMode]="'inline'" style="height:100%">
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-user"></i>商品</span>
+                    <ul>
+                        <li nz-menu-item>菜品资料</li>
+                        <li nz-menu-item>菜品分类</li>
+                        <li nz-menu-item>批量操作</li>
+                        <li nz-menu-item>原材料配方</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-laptop"></i>库存</span>
+                    <ul>
+                        <li nz-menu-item>库存查询</li>
+                        <li nz-menu-item>库存预警</li>
+                        <li nz-menu-item>添加商品</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-pay-circle-o"></i>销售</span>
+                    <ul>
+                        <li nz-menu-item>营业概况</li>
+                        <li nz-menu-item>销售单据</li>
+                        <li nz-menu-item>日结记录</li>
+                        <li nz-menu-item>折扣统计</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-idcard"></i>会员</span>
+                    <ul>
+                        <li nz-menu-item>会员资料</li>
+                        <li nz-menu-item>会员等级</li>
+                        <li nz-menu-item>会员卡报表</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-contacts"></i>员工</span>
+                    <ul>
+                        <li nz-menu-item>收银员资料</li>
+                        <li nz-menu-item>收银员业绩</li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>
+                        <i class="anticon anticon-setting"></i>账户</span>
+                    <ul>
+                        <li nz-menu-item>账户管理</li>
+                        <li nz-menu-item>系统设置</li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <nz-layout style="padding:0 24px 24px">
+            <nz-content >
+                <div class="container">
+                    <router-outlet></router-outlet>
+                </div>
+            </nz-content>
+        </nz-layout>
+    </nz-layout>
+</nz-layout>
