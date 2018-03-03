@@ -1,0 +1,41 @@
+﻿{
+    "api":"back/product.php",
+    "cols":"*",
+    "filterCols":"goodId,categoryId,describe,category1Id,classify2Id",
+    "dictionary":{
+        "cn":{
+            "addTime":"上架时间"
+        }
+    },
+    
+    "operate": true,
+    "multiple":true,
+    "filterData":{
+        "addTime":{
+            "type":"DateFormat",
+            "format":"yyyy/MM/dd hh:mm:ss"
+        },
+        "phone":{
+            "type":"Regplace",
+            "reg":"(\\d{3}).+(\\d{4})",
+            "replaceVal":"$1****$2"
+        },
+        "brand":{
+            "type":"Regplace",
+            "reg":"(.).+",
+            "replaceVal":"$1**"
+        },
+        "size":{
+            "type":"Regplace",
+            "reg":"元",
+            "replaceVal":"￥"
+        }
+    },
+    "pagination":{
+        "pageitems":10
+    },
+    "search":{
+        "show":true,
+        "api":"config/productAttr.txt"
+    }
+}

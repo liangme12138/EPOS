@@ -1,0 +1,30 @@
+<div class="myForm">
+        <div *ngFor="let col of colsConfig" class="d1">
+            <label >{{privateDic[common.lanType] && privateDic[common.lanType][col] ? privateDic[common.lanType][col]:common.publicDic[common.lanType][col]||col
+                }}:
+            </label>
+            
+            <div *ngIf="colsAttributes[col]" [ngSwitch]="colsAttributes[col].type" class="d2">
+                <select *ngSwitchCase="'select-api'">
+                    <ng-template ngFor let-obj [ngForOf]="selectApiDataset[col]">
+                        <option [value]="obj[colsAttributes[col].match.text]" *ngIf="obj[colsAttributes[col].match.text] == colsAttributes[col].defaultvalue"
+                        selected>{{obj[colsAttributes[col].match.text]}}</option>
+                        <option [value]="obj[colsAttributes[col].match.text]" *ngIf="obj[colsAttributes[col].match.text] != colsAttributes[col].defaultvalue">{{obj[colsAttributes[col].match.text]}}</option>
+                    </ng-template>
+                </select>
+                <select *ngSwitchCase="'select'">
+                    <ng-template ngFor let-obj [ngForOf]="colsAttributes[col].data">
+                        <option [value]="obj['text']" *ngIf="obj['text'] == colsAttributes[col].defaultvalue"
+                            selected>{{obj['text']}}</option>
+                        <option [value]="obj['text']" *ngIf="obj['text'] != colsAttributes[col].defaultvalue">{{obj['text']}}</option>
+                    </ng-template>
+                </select>
+                <input type="tel" *ngSwitchCase="'tel'" maxlength="11" minlength="11">
+                <input type="number" *ngSwitchCase="'number'">
+                <textarea *ngSwitchCase="'textarea'" rows="3" cols="30"></textarea>
+            </div>
+            <div *ngIf="!colsAttributes[col]" class="d2">
+                <input type="text">
+            </div>
+        </div>
+</div>

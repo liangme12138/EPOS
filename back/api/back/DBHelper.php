@@ -1,10 +1,12 @@
 <?php
     function connect_oop() {
         // 配置参数
-        $servername = 'localhost';
+         $servername = 'localhost';
+         $password = '';
+        // $servername = '10.3.136.55';
+        // $password = 'root';
         $username = 'root';
-        $password = '';
-        $database = 'epos';
+        $database = 'pet';
         header('Access-Control-Allow-Origin:*');
         //连接数据库
         $conn = new mysqli($servername, $username, $password, $database);
@@ -12,30 +14,27 @@
         if ($conn -> connect_error) {
             die('连接失败'.$conn -> connect_error);
         }
-        $conn -> set_charset('utf8'); 
+        $conn -> set_charset('utf8');
         return $conn;
     }
-
-
 function query_oop($sql) {
     $jsonData = array();
     $conn = connect_oop();
-    $result = $conn -> query($sql);
+    $result=$conn -> query($sql);
     while ($row = $result -> fetch_assoc()) {
         $jsonData[] = $row;
     };
+
     $result -> free();//释放内存
     $conn -> close();//关闭连接
     return $jsonData;
 }
-
 function excute_oop($sql) {
     $conn = connect_oop();
     $result = $conn -> query($sql);
     $conn -> close();//关闭连接
     return $result;
 }
-
 function multi_query_oop($sql) {
     $jsonData = [];
     $conn = connect_oop();
@@ -52,22 +51,21 @@ function multi_query_oop($sql) {
             $flag++;
             $data = ["data".$flag=> $rows];
             $jsonData = array_merge($jsonData, $data);
-
         } while ($conn -> more_results() && $conn -> next_result());
     }
-
     $conn -> close();//关闭连接
     return $jsonData;
 }
-
 //初始化连接对象方法
 function connect() {
-    $servername = "localhost";//
+     $servername = 'localhost';
+     $password = '';
+    // $servername = "10.3.136.55";
     $username = "root";
-    $password = "";
-    $dbname = 'epos';
-    //初始化连接，返回一个连接对象(包含所连接数据库的信息)
-    $con = mysqli_connect($servername, $username, $password, $dbname);
+    // $password = "root";
+    $dbname = 'pet';
+    // 初始化连接，返回一个连接对象(包含所连接数据库的信息)
+    $con = mysqli_connect($servername, $username, $password, $database);
     header('Access-Control-Allow-Origin:*');
     //获取连接对象的错误信息
     if (mysqli_connect_error($con)) {
@@ -77,17 +75,16 @@ function connect() {
     $con -> set_charset('utf8');
     return $con;
 }
-
 //执行查询数据方法
 function query($sql) {
     //初始化连接
     $conn = connect();
     //执行 sql 脚本，也叫数据库脚本，返回一个结果集（对象）
-    $result = mysqli_query($conn, $sql);
+    $conn->set_charset('utf8');
+    $result=mysqli_query($conn, $sql);
     //定义了一个数组
     $jsonData = array();
     if ($result) {
-
         //在结果集中获取对象(逐行获取)
         while ($obj = mysqli_fetch_object($result)) {
             //$jsonData.push($obj)
@@ -95,18 +92,18 @@ function query($sql) {
             // print_r($obj->email);
         }
         //将对象转换成 json 格式的字符并打印出来
-        //JSON.stringify()            
+        //JSON.stringify()
         // if(!$isCheck){
         // echo json_encode($jsonData, JSON_UNESCAPED_UNICODE);
         // }
         // 释放结果集
+        
         mysqli_free_result($result);
     }
     //关闭连接
     mysqli_close($conn);
     return $jsonData;
 }
-
 //执行逻辑语句
 function excute($sql) {
     //初始化连接
@@ -123,8 +120,6 @@ function excute($sql) {
     //逻辑语句，改变数据
     //insert into, update, delete // 返回一个布尔值，true|false，不用释放
     // $insert = "insert into dk(name) values('" . $_POST["name"] . "')";
-
     // excute($insert);
     // query($sql);
-
 ?>

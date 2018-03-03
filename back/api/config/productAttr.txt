@@ -1,0 +1,25 @@
+﻿{
+    "cols":"goodName,originPrice,Price,size,brand,phone,number,describe",
+    "colsAttributes": {
+        "Price": {
+            "type": "select",
+            "data": [{"value":0, "text": "男"}, {"value": 1, "text": "女"}],
+            "defaultvalue": "女"
+        },
+        "brand": {
+            "type": "select-api",
+            "api": "back/brand.php",
+            "match": {"value": "", "text": "brand"},
+            "defaultvalue": "谷登GOLDEN"
+        },
+        "describe": {
+            "type": "textarea"
+        },
+        "phone": {
+            "type": "tel"
+        },
+        "number": {
+            "type": "number"
+        }
+    }
+}

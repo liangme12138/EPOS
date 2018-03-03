@@ -1,0 +1,32 @@
+<div *ngIf="dataset">
+    <div *ngIf="searchConfig.show"><dataform [api]="searchConfig.api"></dataform></div>
+    <table>
+        <thead>
+            <tr>
+                <th *ngIf="multiple"><input type="checkbox" [checked]="currentTrArray.length==dataset.length" (click)="selectAll()">全选</th>
+                <th *ngIf="!multiple">
+                   单选
+                </th>
+                <ng-template ngFor let-key [ngForOf]="getKeys(dataset[0])" >
+                    <th *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key]:common.publicDic[common.lanType][key] || key}}</th>
+                </ng-template>
+                <th *ngIf="operateConfig">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of dataset;let idx =index;" [class.actived]="currentTrArray.indexOf(idx)>-1" (click)="selectTr(idx,$event)">
+                <td *ngIf="multiple"><input type="checkbox" [checked]="currentTrArray.indexOf(idx)>-1"></td>
+                <th *ngIf="!multiple">
+                    <input type="radio" name="single" [checked]="currentTrArray.indexOf(idx)>-1">
+                </th>
+                <ng-template ngFor let-key [ngForOf]="getKeys(obj)">
+                    <td *ngIf="(!columns[0] || columns.indexOf(key) > -1) &&  filterColumns.indexOf(key) < 0">{{filterData(key, obj[key])}}</td>
+                </ng-template>
+                <td *ngIf="operateConfig"><button (click)="operate(obj)">编辑</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="paginationConfig['pageitems']" (click)="pageTo($event)">
+        <input type="button" [value]="i" *ngFor="let i of [] | range:pageCount">
+    </div>
+</div>
