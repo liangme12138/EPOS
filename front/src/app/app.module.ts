@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-import { WeUiModule } from 'ngx-weui';
-// import { WeUiModule } from 'ngx-weui';
-
+import { WeUiModule, FormModule } from 'ngx-weui';
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -38,7 +38,9 @@ import { MenusComponent } from './menus/menus.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // WeUiModule.forRoot()
+    FormsModule,
+    HttpModule,
+    WeUiModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

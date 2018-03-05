@@ -1,5 +1,11 @@
-
-<p>
-  登录页面
-</p>
-<a [routerLink]="['/reg']">去注册</a>
+<div class="login">
+  <div class="lg-top">
+    <i class="iconfont icon-fanhui back"></i>
+    <h2>手机号登录</h2>
+  </div>
+  <div class="lg-body">
+    <input type="text" class='tel' placeholder="请输入手机号" [(ngModel)]="tel" (blur)="telBtn()"><br />
+    <input type="text" class="password" placeholder="请输入密码" [(ngModel)]="pwd" (blur)="pwdBtn()"><br />
+    <button (click)="toLogin()">登录</button>
+  </div>
+</div>
