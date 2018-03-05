@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-import { WeUiModule, FormModule } from 'ngx-weui';
-import {FormsModule} from '@angular/forms';
+import { WeUiModule } from 'ngx-weui';
+// import { WeUiModule } from 'ngx-weui';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpService} from '../utils/ajax'
+
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -18,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
 import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
+import { OrderComponent } from './order/order.component';
+import { PublicMenusComponent } from './public-menus/public-menus.component';
 
 
 @NgModule({
@@ -33,7 +38,9 @@ import { MenusComponent } from './menus/menus.component';
     LoginComponent,
     RegComponent,
     HeaderComponent,
-    MenusComponent
+    MenusComponent,
+    OrderComponent,
+    PublicMenusComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +48,9 @@ import { MenusComponent } from './menus/menus.component';
     FormsModule,
     HttpModule,
     WeUiModule.forRoot()
+    // WeUiModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -62,7 +62,7 @@ function multi_query_oop($sql) {
 
 //初始化连接对象方法
 function connect() {
-    $servername = "10.3.132.77";
+    $servername = "10.3.132.77";//
     $username = "root";
     $password = "root";
     $dbname = 'epos';

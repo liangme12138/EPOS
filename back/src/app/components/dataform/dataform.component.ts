@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output} from '@angular/core';
 import {HttpService} from '../../utils/ajax'
 import {CommonService} from '../../utils/common.service'
 @Component({
@@ -8,7 +8,8 @@ import {CommonService} from '../../utils/common.service'
 })
 export class DataformComponent implements OnInit {
   @Input() api:string;
-
+  @Input() objs: Object;
+  // @Output() colsConfig: 
   colsConfig:Array<string>=[];
   privateDic:Object={};
   colsAttributes:Object={};
@@ -24,7 +25,6 @@ export class DataformComponent implements OnInit {
           if (this.colsAttributes[item]['type'] == 'select-api') {
             let _api = this.colsAttributes[item]['api'];
             this.http.get(_api).then((res) => {
-              console.log(res)
               this.selectApiDataset[item] = res;
               
             })
@@ -34,8 +34,7 @@ export class DataformComponent implements OnInit {
     })
     this.http.get("config/product.txt").then((configRes) => {
       this.privateDic = configRes['dictionary'] || {};//私有字典(要改的列名)
-
     })
   }
-
+  
 }

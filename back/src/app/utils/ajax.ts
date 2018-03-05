@@ -14,7 +14,7 @@ export class HttpService{
     get(api,params={}){
         return new Promise((resolve,reject)=>{
             params['_'] = Math.random().toString().slice(2);
-            this.http.get( this.getUrl( api ), new RequestOptions({
+            this.http.request( this.getUrl( api ), new RequestOptions({
                 method: RequestMethod.Get,
                 search: params
             })).toPromise().then((res)=>{
@@ -33,7 +33,7 @@ export class HttpService{
                 }
                 return ret;
             }            
-            this.http.post( this.getUrl( api ), new RequestOptions( {
+            this.http.request( this.getUrl( api ), new RequestOptions( {
                 method: RequestMethod.Post,
                 body: str(params),
                 headers: new Headers({

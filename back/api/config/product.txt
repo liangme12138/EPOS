@@ -8,7 +8,6 @@
         }
     },
     
-    "operate": true,
     "multiple":true,
     "filterData":{
         "addTime":{
@@ -25,7 +24,7 @@
             "reg":"(.).+",
             "replaceVal":"$1**"
         },
-        "size":{
+        "Price":{
             "type":"Regplace",
             "reg":"元",
             "replaceVal":"￥"
@@ -37,5 +36,10 @@
     "search":{
         "show":true,
         "api":"config/productAttr.txt"
-    }
+    },
+    "operate": true,
+    "add":{
+        "show":true
+    },
+    "UUID":"goodId"
 }

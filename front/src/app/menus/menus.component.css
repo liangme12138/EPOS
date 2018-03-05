@@ -1,0 +1,21 @@
+
+.menus {
+    display: flex;
+    height: 100%;
+}
+
+.menus .menus_left {
+    flex: 1;
+    background: #eee;
+}
+
+.menus .menus_left>div {
+    /* height: 30px; */
+    /* background: #eee; */
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.menus .menus_item {
+    flex: 2.5;
+}

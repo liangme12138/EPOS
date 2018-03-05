@@ -17,10 +17,34 @@
         <router-outlet></router-outlet>
     </div>
 </div> -->
+<!-- <select [(ngModel)]="common.lanType" class="lan">
+    <option value="en">English</option>
+    <option value="cn">Chinese</option>
+</select> -->
 <nz-layout class="layout">
     <nz-header>
-        <h3 class="header_layout">点餐系统</h3>
+        <h3 class="header_layout">点餐系统 <span> , 欢迎{{user}}进入点餐系统</span></h3>
+        <div class="header_right">
+            <nz-select style="width: 120px;" [(ngModel)]="common.lanType" [nzPlaceHolder]="'en'" nzAllowClear nzShowSearch>
+                <nz-option [nzValue]="'en'" [nzLabel]="'English'">
+                    
+                </nz-option>
+                <nz-option [nzValue]="'cn'" [nzLabel]="'Chinese'">
+                   
+                </nz-option>
+            </nz-select>
+            <button nz-button [nzType]="'primary'" (click)="showModal()">
+                <span>退出</span>
+            </button>
+            <nz-modal [nzVisible]="isVisible" [nzTitle]="'点餐系统'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)"
+                [nzConfirmLoading]="isConfirmLoading">
+                <ng-template #modalContent>
+                    <p style="text-align:center;">{{user}}是否退出？</p>
+                </ng-template>
+            </nz-modal>       
+        </div>
     </nz-header>
+    
     <nz-layout>
         <nz-sider [nzWidth]="200" style="background:#fff">
             <ul nz-menu [nzMode]="'inline'" style="height:100%">
