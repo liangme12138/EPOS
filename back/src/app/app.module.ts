@@ -14,15 +14,17 @@ import { IndexComponent } from './components/index/index.component';
 import { ProComponent } from './components/pro/pro.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RangePipe } from './utils/range.pipe';
-
-
+import {DataGridComponent} from './components/datagrid/datagrid.component';
+import {DataformComponent} from './components/dataform/dataform.component';
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     ProComponent,
     PagenotfoundComponent,
-    RangePipe
+    RangePipe,
+    DataGridComponent,
+    DataformComponent
   ],
   imports: [
     BrowserModule,

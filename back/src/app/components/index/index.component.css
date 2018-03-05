@@ -15,6 +15,20 @@
 .container{
     margin:20px;
 }
+.header_right{
+    float:right;
+
+}
+.header_layout{
+    width:600px;
+    display: inline-block;
+}
+.lan{
+   
+}
+
+
+
 
 
 

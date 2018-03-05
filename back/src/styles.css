@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 *{margin:0;padding:0;}
+.ant-pagination .ant-pagination-item a {
+  margin: 0;
+  width:28px;
+  height:28px;
+  line-height:28px;
+  display: block;
+}

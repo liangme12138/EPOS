@@ -1,0 +1,66 @@
+<div *ngIf="dataset">
+    <div class="dataHeader">
+        <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入要搜索的内容'" [(ngModel)]="_value" style="width: 200px;" (nzOnSearch)="onSearch()"></nz-input>
+        <button nz-button [nzType]="'primary'" *ngIf="btnShow" (click)="goback()">
+            <span>返回</span>
+        </button>
+        <button nz-button [nzType]="'primary'" *ngIf="addConfig.show" (click)="showModal()">
+            <span>新增</span>
+        </button>
+        <button nz-button [nzType]="'primary'" *ngIf="addConfig.show" (click)="del()">
+            <span>删除</span>
+        </button>
+    </div>
+    <nz-modal [nzVisible]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter" (nzOnCancel)="handleCancel($event)">
+        <ng-template #modalTitle>
+            点餐系统
+        </ng-template>
+        <ng-template #modalContent>
+            <dataform [api]="searchConfig.api" [objs]="objData" #objs1></dataform>
+        </ng-template>
+        <ng-template #modalFooter>
+            <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel($event)">
+                返 回
+            </button>
+            <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="handleOk($event)" [nzLoading]="isConfirmLoading" [disabled]="showDisabled">
+                确 认
+            </button>
+        </ng-template>
+    </nz-modal>
+    <!-- <div *ngIf="searchConfig.show"><dataform [api]="searchConfig.api"></dataform></div> -->
+    <table>
+        <thead>
+            <tr>
+                <th *ngIf="multiple"><input type="checkbox" [checked]="currentTrArray.length==dataset.length" (click)="selectAll()">{{common.lanType == 'en' ? 'All' : '全选'}}</th>
+                <th *ngIf="!multiple">
+                 {{common.lanType == 'en' ? 'Radio' : '单选'}}
+                </th>
+                <ng-template ngFor let-key [ngForOf]="getKeys(dataset[0])" >
+                    <th *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key]:common.publicDic[common.lanType][key] || key}}</th>
+                </ng-template>
+                <th *ngIf="operateConfig">{{common.lanType == 'en' ? 'Operate' : '操作'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of dataset;let idx =index;" [class.actived]="currentTrArray.indexOf(idx)>-1" (click)="selectTr(idx,$event)">
+                <td *ngIf="multiple"><input type="checkbox" [checked]="currentTrArray.indexOf(idx)>-1"></td>
+                <th *ngIf="!multiple">
+                    <input type="radio" name="单选" [checked]="currentTrArray.indexOf(idx)>-1">
+                </th>
+                <ng-template ngFor let-key [ngForOf]="getKeys(obj)">
+                    <td *ngIf="(!columns[0] || columns.indexOf(key) > -1) &&  filterColumns.indexOf(key) < 0">{{filterData(key, obj[key])}}</td>
+                </ng-template>
+                <td *ngIf="operateConfig">
+                    <button nz-button [nzType]="'primary'"  (click)="operate(obj)">编辑</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div *ngIf="paginationConfig['pageitems']">
+        <!-- <input type="button" [value]="i" *ngFor="let i of [] | range:pageCount"> -->
+        <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="rowsCount" [(nzPageSize)]="PageSize" nzShowSizeChanger nzShowQuickJumper
+        nzShowTotal></nz-pagination>
+
+    </div>
+</div>

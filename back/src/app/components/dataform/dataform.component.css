@@ -1,0 +1,24 @@
+.myForm{
+    width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+.myForm .d1{
+    display: flex;
+    padding:10px 20px;
+    display: inline-block;
+    /* width:50%; */
+    /* flex:1; */
+}
+.myForm .d1>label{
+    float:left;
+    text-align:center;
+    
+}
+
+.myForm .d2{
+    float:right;
+    /* margin: 20px; */
+    /* width: 50%; */
+
+}
