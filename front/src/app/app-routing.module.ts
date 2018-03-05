@@ -7,12 +7,22 @@ import { Page404Component } from './page404/page404.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDescComponent } from './product-desc/product-desc.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
-import { MenusComponent } from './menus/menus.component'
+import { MenusComponent } from './menus/menus.component';
+import { OrderComponent } from './order/order.component'
 
 const routes: Routes = [
-  {path:'',redirectTo:'/home',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'product/:id',component:ProductComponent,
+  { path: '', redirectTo:'/home/menus',pathMatch:'full'},
+  {path:'home',component:HomeComponent,
+    children: [
+      {
+        path: 'menus', component: MenusComponent
+      },
+      {
+        path: 'order', component: OrderComponent
+      }
+    ]
+  },
+  {path:'product',component:ProductComponent,
     children: [
       {
         path:'desc/:descid',component:ProductDescComponent
@@ -24,8 +34,7 @@ const routes: Routes = [
   },
   {path:'details',component:DetailsComponent},
   {path:'cart/:id',component:CartComponent},
-  {path:'**',component:Page404Component},
-  { path:'menus', component: MenusComponent}
+  {path:'**',component:Page404Component}
 ];
 
 @NgModule({

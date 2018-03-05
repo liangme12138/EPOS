@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import { WeUiModule } from 'ngx-weui';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpService} from '../utils/ajax'
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,6 +17,8 @@ import { ProductDescComponent } from './product-desc/product-desc.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
 import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
+import { OrderComponent } from './order/order.component';
+import { PublicMenusComponent } from './public-menus/public-menus.component';
 
 
 @NgModule({
@@ -27,14 +32,18 @@ import { MenusComponent } from './menus/menus.component';
     ProductDescComponent,
     ProductSellerComponent,
     HeaderComponent,
-    MenusComponent
+    MenusComponent,
+    OrderComponent,
+    PublicMenusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpModule,
     // WeUiModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
