@@ -1,7 +1,7 @@
 ﻿{
-    "cols":"goodName,originPrice,Price,size,brand,phone,number,describe",
+    "cols":"goodName,originPrice,Price,size,brand,describe",
     "colsAttributes": {
-        "Price": {
+        "gender": {
             "type": "select",
             "data": [{"value":0, "text": "男"}, {"value": 1, "text": "女"}],
             "defaultvalue": "女"

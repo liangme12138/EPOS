@@ -6,10 +6,34 @@ import { CommonService } from '../../utils/common.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+  isVisible = false;
+  isConfirmLoading = false;
+  user: string = "我的梅";
   constructor( private common: CommonService) { }
 
-  ngOnInit() {
+  ngOnInit ()
+  {
+     
   }
+  showModal = () =>
+  {
+    this.isVisible = true;
+  };
 
+  handleOk = ( e ) =>
+  {
+    this.isConfirmLoading = true;
+    setTimeout( () =>
+    {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+
+    }, 1000 );
+  };
+
+  handleCancel = ( e ) =>
+  {
+    this.isVisible = false;
+  };
 }
+
