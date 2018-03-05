@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { WeUiModule } from 'ngx-weui';
+// import { WeUiModule } from 'ngx-weui';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,6 +16,8 @@ import { ProductDescComponent } from './product-desc/product-desc.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
 import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
+import { HeaderComponent } from './header/header.component';
+import { MenusComponent } from './menus/menus.component';
 
 
 @NgModule({
@@ -28,11 +31,14 @@ import { RegComponent } from './reg/reg.component';
     ProductDescComponent,
     ProductSellerComponent,
     LoginComponent,
-    RegComponent
+    RegComponent,
+    HeaderComponent,
+    MenusComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // WeUiModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

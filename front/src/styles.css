@@ -1,1 +1,145 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/*==========样式重置===========*/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+input,
+img,
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    border: 0;
+}
+
+input {
+    outline: none;
+}
+
+header,
+footer,
+section,
+main,
+nav {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('./font/iconfont.eot?t=1520071051350');
+    /* IE9*/
+    src: url('./font/iconfont.eot?t=1520071051350#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./font/iconfont.ttf?t=1520071051350') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('./font/iconfont.svg?t=1520071051350#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwucheman:before {
+    content: "\f0178";
+}
+
+.icon-gouwuchekong:before {
+    content: "\f0179";
+}
+
+.icon-gerenzhongxin:before {
+    content: "\e68a";
+}
+
+.icon-yudiancan0101:before {
+    content: "\e620";
+}
+
+.icon-yijianfankui:before {
+    content: "\e637";
+}
+
+.icon-xin:before {
+    content: "\e635";
+}
+
+.icon-dingdan:before {
+    content: "\e652";
+}
+
+.icon-jianhao:before {
+    content: "\e604";
+}
+
+.icon-jingdiananli_wujiaoxing_shoucanghou:before {
+    content: "\e64a";
+}
+
+.icon-jingdiananli_kongwujiaoxing_shoucang:before {
+    content: "\e64b";
+}
+
+.icon-jiahao2:before {
+    content: "\e648";
+}
+
+.icon-rexiaochanpin:before {
+    content: "\e60a";
+}
+
+.icon-gifts:before {
+    content: "\e60d";
+}
+
+.icon-membership-card_icon:before {
+    content: "\e677";
+}
+
+.icon-shezhi-tianchong:before {
+    content: "\e638";
+}
+
+.icon-option:before {
+    content: "\e60b";
+}
+
+.icon-fanhui:before {
+    content: "\e606";
+}
+
+.icon-youhuiquan:before {
+    content: "\e612";
+}
