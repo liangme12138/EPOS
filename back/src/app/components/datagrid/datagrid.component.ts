@@ -127,6 +127,12 @@ export class DataGridComponent implements OnInit, DoCheck{
             }else{
                 pageParams['status'] = 'update';
             }
+            if ( this.btnShow == true ) {
+                pageParams['state'] = 'search';
+                pageParams['content'] = this.values;
+            }
+            pageParams['pageitems'] = this.PageSize;
+            pageParams['page'] = this._current;
             pageParams['data'] = this.objData;
             this.http.get( this.apiConfig, pageParams ).then( ( res ) =>
             {

@@ -7,6 +7,9 @@ import { Page404Component } from './page404/page404.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDescComponent } from './product-desc/product-desc.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
+import { LoginComponent } from './login/login.component';
+import { RegComponent } from './reg/reg.component';
+import { MenusComponent } from './menus/menus.component'
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -23,6 +26,9 @@ const routes: Routes = [
   },
   {path:'details',component:DetailsComponent},
   {path:'cart/:id',component:CartComponent},
+  {path:'login',component:LoginComponent},
+  {path:'reg',component:RegComponent},
+  { path:'menus', component: MenusComponent},
   {path:'**',component:Page404Component}
 ];
 

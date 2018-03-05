@@ -1,72 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 
-
-/*==========样式重置===========*/
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-a,
-input,
-img,
-ul,
-li,
-ol,
-dl,
-dt,
-dd {
-    padding: 0;
-    margin: 0;
-}
-
-ul,
-ol {
-    list-style: none;
-}
-
-img {
-    display: block;
-    border: 0;
-}
-
-input {
-    outline: none;
-}
-
-header,
-footer,
-section,
-main,
-nav {
-    display: block;
-}
-
-a {
-    text-decoration: none;
-}
-
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1520071051350'); /* IE9*/
+  src: url('iconfont.eot?t=1520071051350#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.ttf?t=1520071051350') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1520071051350#iconfont') format('svg'); /* iOS 4.1- */
+=======
 @font-face {
     font-family: "iconfont";
-    src: url('./font/iconfont.eot?t=1520071051350');
+    src: url('../font/iconfont.eot?t=1520071051350');
     /* IE9*/
-    src: url('./font/iconfont.eot?t=1520071051350#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('./font/iconfont.ttf?t=1520071051350') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('./font/iconfont.svg?t=1520071051350#iconfont') format('svg');
+    src: url('../font/iconfont.eot?t=1520071051350#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.ttf?t=1520071051350') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1520071051350#iconfont') format('svg');
     /* iOS 4.1- */
+>>>>>>> 7e53698069857f8cdfa0d3eb7219e629b749be70
 }
 
 .iconfont {
     font-family: "iconfont" !important;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

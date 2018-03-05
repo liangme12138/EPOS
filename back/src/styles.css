@@ -7,3 +7,9 @@
   line-height:28px;
   display: block;
 }
+.ant-menu-submenu-title {
+
+  font-size: 18px !important;
+  margin: 10px 0; 
+}
+

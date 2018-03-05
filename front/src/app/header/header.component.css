@@ -1,0 +1,25 @@
+.header {
+    height: 40px;
+    background: #1C1B20;
+    display: flex;
+    padding: 0 20px;
+    line-height: 40px;
+    color:#fff;
+}
+
+.header span {
+    flex: 1;
+}
+
+.header .left {
+    text-align: left;
+}
+
+.header .right {
+    text-align: right;
+}
+
+.header h1 {
+    font-size: 18px;
+    flex: 3
+}

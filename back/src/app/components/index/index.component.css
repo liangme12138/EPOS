@@ -23,9 +23,15 @@
     width:600px;
     display: inline-block;
 }
-.lan{
-   
+.header_layout span{
+    font-size: 14px;
+    color: rgb(226, 225, 218);
+    margin-left: 10px;
 }
+
+/* .lan{
+   
+} */
 
 
 
