@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { WeUiModule } from 'ngx-weui';
-// import { WeUiModule } from 'ngx-weui';
+import { ElModule } from 'element-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax'
@@ -23,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
 import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
+import { QuickLoginComponent } from './quick-login/quick-login.component';
 
 
 @NgModule({
@@ -40,15 +40,15 @@ import { PublicMenusComponent } from './public-menus/public-menus.component';
     HeaderComponent,
     MenusComponent,
     OrderComponent,
-    PublicMenusComponent
+    PublicMenusComponent,
+    QuickLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    WeUiModule.forRoot()
-    // WeUiModule.forRoot()
+    ElModule.forRoot(),
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
