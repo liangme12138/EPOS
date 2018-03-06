@@ -61,8 +61,8 @@ export class MenusComponent implements OnInit {
         }
       
     }
-    addQty(foodId){
-        // console.log(foodId)
+    addQty(foodId,price){
+        console.log('price', price)
         this.http.post('car.php', { state: 'addQty', foodId: foodId, userPhone: this.userPhone}).then((res) => {
             if (res == 'seccese'){
                 this.store['count']++;

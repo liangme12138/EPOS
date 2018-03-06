@@ -21,7 +21,7 @@
                         <h4>￥{{obj.price}}</h4>
                         
                         <div *ngIf="qtyId.indexOf(obj.foodId) > -1; else elseBlock">
-                            <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId)"></i>
+                            <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId,obj.price)"></i>
                             <span>{{counts[qtyId.indexOf(obj.foodId)]}}</span>
                             <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId)"></i>
                         </div>

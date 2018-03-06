@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { WeUiModule } from 'ngx-weui';
-// import { WeUiModule } from 'ngx-weui';
+import { ElModule } from 'element-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax'
@@ -24,6 +23,7 @@ import { MenusComponent } from './menus/menus.component';
 import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
 import { HotSalesPipe } from '../pipe/hot-sales.pipe';
+import { QuickLoginComponent } from './quick-login/quick-login.component';
 
 
 @NgModule({
@@ -42,7 +42,8 @@ import { HotSalesPipe } from '../pipe/hot-sales.pipe';
     MenusComponent,
     OrderComponent,
     PublicMenusComponent,
-    HotSalesPipe
+    HotSalesPipe,
+    QuickLoginComponent
   ],
   imports: [
     BrowserModule,

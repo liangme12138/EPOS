@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
+import { FormBuilder} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
@@ -11,24 +14,35 @@ import { HttpService } from './utils/ajax';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
-import { ProComponent } from './components/pro/pro.component';
+import { ProductComponent } from './components/product/product.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RangePipe } from './utils/range.pipe';
 import {DataGridComponent} from './components/datagrid/datagrid.component';
 import {DataformComponent} from './components/dataform/dataform.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProComponent } from './components/pro/pro.component';
+import { StoreComponent } from './components/store/store.component';
+import { WarningComponent } from './components/warning/warning.component';
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    ProComponent,
+    ProductComponent,
     PagenotfoundComponent,
     RangePipe,
     DataGridComponent,
-    DataformComponent
+    DataformComponent,
+    LoginComponent,
+    HomeComponent,
+    ProComponent,
+    StoreComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RootRouter,
     HttpModule,
     NgZorroAntdModule.forRoot(),
@@ -36,8 +50,9 @@ import {DataformComponent} from './components/dataform/dataform.component';
   ],
   providers: [
     CommonService,
-    HttpService
+    HttpService,
+    FormBuilder,
   ],
-  bootstrap: [IndexComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

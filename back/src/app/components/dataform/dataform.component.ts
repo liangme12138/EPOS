@@ -19,6 +19,7 @@ export class DataformComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(this.api).then((configRes)=>{
+      
       this.colsConfig = configRes['cols'].split(',');
       this.colsAttributes = configRes['colsAttributes'] || {};
         for (let item in this.colsAttributes) {
@@ -26,7 +27,6 @@ export class DataformComponent implements OnInit {
             let _api = this.colsAttributes[item]['api'];
             this.http.get(_api).then((res) => {
               this.selectApiDataset[item] = res;
-              
             })
           }
         }

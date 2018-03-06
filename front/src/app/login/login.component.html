@@ -1,5 +1,17 @@
+<div class="login">
+  <div class="lg-top">
+    <i class="iconfont icon-fanhui back"></i>
+    <h2>手机号登录</h2>
+  </div>
+  <div class="img">
+    <img src="http://via.placeholder.com/375x200" alt="">
+  </div>
+  <div class="lg-body">
+    <el-input [(ngModel)]="tel" placeholder="请输入手机号" (blur)="telBtn()"></el-input>
+    <el-input native-type="password" [(ngModel)]="pwd" placeholder="请输入密码" (blur)="pwdBtn()"></el-input>
+    <el-button type="primary" native-type="submit" icon="upload" (click)="toLogin()">登录</el-button>
+    <br>
+    <a [routerLink]="['/quickLogin']">手机快捷登陆</a>
+  </div>
+</div>
 
-<p>
-  登录页面
-</p>
-<a [routerLink]="['/reg']">去注册</a>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../utils/common.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
-  selector: 'app-root',
+  selector: 'home',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
@@ -9,7 +10,7 @@ export class IndexComponent implements OnInit {
   isVisible = false;
   isConfirmLoading = false;
   user: string = "我的梅";
-  constructor( private common: CommonService) { }
+  constructor( private common: CommonService, private routeInfo: ActivatedRoute, private router: Router ) { }
 
   ngOnInit ()
   {
@@ -27,7 +28,8 @@ export class IndexComponent implements OnInit {
     {
       this.isVisible = false;
       this.isConfirmLoading = false;
-
+      localStorage.clear();
+      this.router.navigate( [''] );
     }, 1000 );
   };
 

@@ -1,22 +1,33 @@
 {
 	"en":{
-        "goodName":"Good Name",
-        "originPrice":"Origin Price",
-        "Price":"Price",
+        "foodName":"Food Name",
+        "CategoryName":"Category Name",
         "sale":"Sale",
-        "size":"Size",
-        "brand":"Brand",
+        "price":"Price",
+        "Like":"Like",
         "addTime":"Add Time",
-        "describe":"Describe"
+        "eg2":"Discounts",
+        "goodsName":"Goods Name",
+        "goodsCategory":"Goods Category",
+        "supplier":"supplier",
+        "inventory":"Inventory",
+        "purchasCost":"PurchaseCost",
+        "Units":"Units"
     },
     "cn":{
-        "goodName":"商品名称",
-        "originPrice":"原价",
-        "Price":"价格",
-        "sale":"已售量",
-        "size":"尺寸",
-        "brand":"品牌",
+       "foodName":"菜名",
+        "CategoryName":"分类",
+        "sale":"销量",
+        "price":"价格",
+        "Like":"收藏量",
         "addTime":"添加时间",
-        "describe":"描述"
+        "eg2":"限时打折",
+        "goodsName":"材料名称",
+        "goodsCategory":"材料分类",
+        "supplier":"供应商",
+        "inventory":"库存",
+        "purchasCost":"进货价",
+        "Units":"单位"
+
     }
 }

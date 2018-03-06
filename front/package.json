@@ -27,6 +27,7 @@
     "element-angular": "^0.6.3",
     "ionic": "^3.19.1",
     "ionic-angular": "^3.9.2",
+    "ng-zorro-antd": "^0.6.15",
     "ngx-weui": "^1.2.2",
     "rxjs": "^5.5.6",
     "weui": "^1.1.2",

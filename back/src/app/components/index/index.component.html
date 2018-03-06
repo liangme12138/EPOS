@@ -26,8 +26,7 @@
         <h3 class="header_layout">点餐系统 <span> , 欢迎{{user}}进入点餐系统</span></h3>
         <div class="header_right">
             <nz-select style="width: 120px;" [(ngModel)]="common.lanType" [nzPlaceHolder]="'en'" nzAllowClear nzShowSearch>
-                <nz-option [nzValue]="'en'" [nzLabel]="'English'">
-                    
+                <nz-option [nzValue]="'en'" [nzLabel]="'English'">         
                 </nz-option>
                 <nz-option [nzValue]="'cn'" [nzLabel]="'Chinese'">
                    
@@ -52,29 +51,27 @@
                     <span title>
                         <i class="anticon anticon-user"></i>商品</span>
                     <ul>
-                        <li nz-menu-item>菜品资料</li>
-                        <li nz-menu-item>菜品分类</li>
+                        <li nz-menu-item><a routerLink="/index/product">菜品资料</a></li>
+                        <!-- <li nz-menu-item>菜品分类</li>
                         <li nz-menu-item>批量操作</li>
-                        <li nz-menu-item>原材料配方</li>
+                        <li nz-menu-item>原材料配方</li> -->
                     </ul>
                 </li>
                 <li nz-submenu>
                     <span title>
                         <i class="anticon anticon-laptop"></i>库存</span>
                     <ul>
-                        <li nz-menu-item>库存查询</li>
-                        <li nz-menu-item>库存预警</li>
-                        <li nz-menu-item>添加商品</li>
+                        <li nz-menu-item><a routerLink="/index/store">库存查询</a></li>
+                        <li nz-menu-item><a routerLink="/index/warn">库存预警</a></li>
                     </ul>
                 </li>
                 <li nz-submenu>
                     <span title>
                         <i class="anticon anticon-pay-circle-o"></i>销售</span>
                     <ul>
-                        <li nz-menu-item>营业概况</li>
                         <li nz-menu-item>销售单据</li>
                         <li nz-menu-item>日结记录</li>
-                        <li nz-menu-item>折扣统计</li>
+                        <!-- <li nz-menu-item>折扣统计</li> -->
                     </ul>
                 </li>
                 <li nz-submenu>
