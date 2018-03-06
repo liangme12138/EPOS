@@ -11,7 +11,7 @@ import { HttpService } from './utils/ajax';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
-import { ProComponent } from './components/pro/pro.component';
+import { ProductComponent } from './components/product/product.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RangePipe } from './utils/range.pipe';
 import {DataGridComponent} from './components/datagrid/datagrid.component';
@@ -20,7 +20,7 @@ import {DataformComponent} from './components/dataform/dataform.component';
   declarations: [
     AppComponent,
     IndexComponent,
-    ProComponent,
+    ProductComponent,
     PagenotfoundComponent,
     RangePipe,
     DataGridComponent,

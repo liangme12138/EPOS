@@ -1,12 +1,12 @@
 <?php
     function connect_oop() {
         // 配置参数
-         $servername = 'localhost';
-         $password = '';
-        // $servername = '10.3.136.55';
-        // $password = 'root';
+        //  $servername = 'localhost';
+        //  $password = '';
+        $servername = '10.3.132.77';
+        $password = 'root';
         $username = 'root';
-        $database = 'pet';
+        $database = 'epos';
         header('Access-Control-Allow-Origin:*');
         //连接数据库
         $conn = new mysqli($servername, $username, $password, $database);
@@ -58,12 +58,12 @@ function multi_query_oop($sql) {
 }
 //初始化连接对象方法
 function connect() {
-     $servername = 'localhost';
-     $password = '';
-    // $servername = "10.3.136.55";
+    //  $servername = 'localhost';
+    //  $password = '';
+    $servername = "10.3.132.77";
     $username = "root";
-    // $password = "root";
-    $dbname = 'pet';
+    $password = "root";
+    $dbname = 'epos';
     // 初始化连接，返回一个连接对象(包含所连接数据库的信息)
     $con = mysqli_connect($servername, $username, $password, $database);
     header('Access-Control-Allow-Origin:*');

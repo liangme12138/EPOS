@@ -50,7 +50,7 @@ export class DataGridComponent implements OnInit, DoCheck{
 
     objData: Object = {};
     type: boolean;
-    showDisabled: boolean = true;
+    showDisabled: boolean =true;
 
     @ViewChild('objs1')
     objs1: DataformComponent;
@@ -61,7 +61,7 @@ export class DataGridComponent implements OnInit, DoCheck{
     
     ngOnInit(){
         //获取当前模块的配置
-        this.http.get(this.config).then((configRes) => {
+        this.http.get(this.config).then((configRes) => {    
             let cols = configRes['cols'];
             this.columns = !cols || cols == '*' ? [] : cols.split(',');
             let filterCols = configRes['filterCols'];
@@ -87,28 +87,17 @@ export class DataGridComponent implements OnInit, DoCheck{
         let len;
         if ( this.objs1){
             len = this.objs1.colsConfig;
-        
             if ( this.objData && len.length != 0 && ( Object.keys( this.objData ) ).length >= len.length) {
                 for ( let i = 0; i < len.length;i++){
-
-                    if ( !this.objData[len[i]] ) {
-                        console.log( len[i] )
+                    if (!this.objData[len[i]] ) {
                         this.showDisabled = true;
                         return;
-                    } else if ( this.objData[len[i]]){
-                        console.log("i:"+ len[i] )
+                    } 
+                    else if ( this.objData[len[i]]){
                         this.showDisabled = false;
                     }
                 }
-                // for(let key in this.objData){
-                //     // console.log( Object.keys( this.objData ).length,len)
-                //     if ( !this.objData[this.objs1.colsConfig][key]) {
-                //         console.log(this.objData[key])
-                //         this.showDisabled = true;
-                //     }else{
-                //         this.showDisabled = false;
-                //     }
-                // }
+                
             }
         }
     }
@@ -134,6 +123,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['pageitems'] = this.PageSize;
             pageParams['page'] = this._current;
             pageParams['data'] = this.objData;
+            console.log(this.objData)
             this.http.get( this.apiConfig, pageParams ).then( ( res ) =>
             {
                 this.dataset = res['data1'];

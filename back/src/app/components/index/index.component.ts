@@ -8,7 +8,7 @@ import { CommonService } from '../../utils/common.service';
 export class IndexComponent implements OnInit {
   isVisible = false;
   isConfirmLoading = false;
-  user: string = "我的梅";
+  user: string = "hahahh";
   constructor( private common: CommonService) { }
 
   ngOnInit ()
