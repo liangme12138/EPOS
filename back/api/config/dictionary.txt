@@ -6,15 +6,28 @@
         "price":"Price",
         "Like":"Like",
         "addTime":"Add Time",
-        "eg2":"Discounts"
+        "eg2":"Discounts",
+        "goodsName":"Goods Name",
+        "goodsCategory":"Goods Category",
+        "supplier":"supplier",
+        "inventory":"Inventory",
+        "purchasCost":"PurchaseCost",
+        "Units":"Units"
     },
     "cn":{
-       "foodName":"食品名称",
+       "foodName":"菜名",
         "CategoryName":"分类",
         "sale":"销量",
         "price":"价格",
         "Like":"收藏量",
         "addTime":"添加时间",
-        "eg2":"限时打折"
+        "eg2":"限时打折",
+        "goodsName":"材料名称",
+        "goodsCategory":"材料分类",
+        "supplier":"供应商",
+        "inventory":"库存",
+        "purchasCost":"进货价",
+        "Units":"单位"
+
     }
 }

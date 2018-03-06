@@ -97,7 +97,7 @@ export class DataGridComponent implements OnInit, DoCheck{
                         this.showDisabled = false;
                     }
                 }
-                
+
             }
         }
     }
@@ -224,6 +224,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['pageitems'] = this.PageSize;
             pageParams['page'] = this._current;
         }
+        console.log(this.apiConfig)
         this.http.get(this.apiConfig, pageParams).then((res) => {
             this.dataset = res['data1'];
             this.rowsCount = res['data2'][0]['colsCount'];//总记录数

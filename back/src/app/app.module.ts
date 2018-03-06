@@ -22,6 +22,8 @@ import {DataformComponent} from './components/dataform/dataform.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProComponent } from './components/pro/pro.component';
+import { StoreComponent } from './components/store/store.component';
+import { WarningComponent } from './components/warning/warning.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { ProComponent } from './components/pro/pro.component';
     DataformComponent,
     LoginComponent,
     HomeComponent,
-    ProComponent
+    ProComponent,
+    StoreComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,
