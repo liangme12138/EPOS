@@ -1,0 +1,26 @@
+/* body,html{
+height: 100%;
+width: 100%;
+} */
+
+.publicMenus {
+    display: flex;
+    height: 100%;
+}
+
+.publicMenus>li {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.publicMenus>li span {
+    display: block;
+}
+
+.publicMenus>li span:first-child {
+    font-size: 20px;
+}
+
+.publicMenus>li span:last-child {
+    font-size: 14px;
+}

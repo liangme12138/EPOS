@@ -28,10 +28,9 @@
     color: rgb(226, 225, 218);
     margin-left: 10px;
 }
-
-/* .lan{
-   
-} */
+.layout{
+    min-width: 880px;
+}
 
 
 

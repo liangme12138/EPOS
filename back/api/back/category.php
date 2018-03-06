@@ -1,7 +1,7 @@
 <?php
     include 'DBHelper.php';
     // $page = isset($_GET['page']) ? $_GET['page'] : '';
-    $sql = "select distinct brand from product";
+    $sql = "select * from category";
     //  if($page && $pageitems){
     //      $no=($page-1)*10;
     //     $sql .= " limit $no,$pageitems";

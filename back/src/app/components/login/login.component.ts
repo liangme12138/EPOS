@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 		} );
 		// 获取身份
 		if ( localStorage.getItem( 'identify' )){
-			this.router.navigate( ['index'] );
+			this.router.navigate( ['index/product'] );
 		}
 	}
 
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
 					if (res != false) {
 						localStorage.setItem( 'identify', res[0].identify );
 						localStorage.setItem( 'userName', res[0].userName );
-						this.router.navigate( ['index'] );
+						this.router.navigate( ['index/product'] );
 					}else{
 						this.show = true;
 						this.disableds = false;
