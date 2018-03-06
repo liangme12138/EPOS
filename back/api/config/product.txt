@@ -1,14 +1,13 @@
 ﻿{
     "api":"back/product.php",
     "cols":"*",
-    "filterCols":"goodId,categoryId,describe,category1Id,classify2Id",
+    "filterCols":"foodId,Category,CategoryId,eg1,eg3,foodImg",
+    "multiple":true,
     "dictionary":{
         "cn":{
             "addTime":"上架时间"
         }
     },
-    
-    "multiple":true,
     "filterData":{
         "addTime":{
             "type":"DateFormat",
@@ -41,5 +40,5 @@
     "add":{
         "show":true
     },
-    "UUID":"goodId"
+    "UUID":"foodId"
 }

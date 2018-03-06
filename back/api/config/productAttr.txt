@@ -1,24 +1,19 @@
 ﻿{
-    "cols":"goodName,originPrice,Price,size,brand,describe",
+    "cols":"foodName,CategoryName,sale,price,Like",
     "colsAttributes": {
-        "gender": {
-            "type": "select",
-            "data": [{"value":0, "text": "男"}, {"value": 1, "text": "女"}],
-            "defaultvalue": "女"
-        },
-        "brand": {
+        "CategoryName": {
             "type": "select-api",
-            "api": "back/brand.php",
-            "match": {"value": "", "text": "brand"},
-            "defaultvalue": "谷登GOLDEN"
+            "api": "back/product.php?type=CategoryName",
+            "match": {"value": "CategoryId", "text": "CategoryName"},
+            "defaultvalue": "主食"
         },
-        "describe": {
-            "type": "textarea"
+        "sale": {
+            "type": "number"
         },
-        "phone": {
-            "type": "tel"
+         "price": {
+            "type": "number"
         },
-        "number": {
+         "Like": {
             "type": "number"
         }
     }

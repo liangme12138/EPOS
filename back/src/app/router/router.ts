@@ -1,12 +1,29 @@
 import {RouterModule,Routes} from '@angular/router';
 
 import { ProComponent } from '../components/pro/pro.component';
+import { LoginComponent } from '../components/login/login.component';
+import { IndexComponent } from '../components/index/index.component';
 import { PagenotfoundComponent } from '../components/pagenotfound/pagenotfound.component';
-
+import { ProductComponent } from '../components/product/product.component';
+import {StoreComponent} from '../components/store/store.component'
+import {WarningComponent} from '../components/warning/warning.component'
 const appRoutes: Routes = [
-    { path: 'pro', component: ProComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full'},
+    { 
+        path: 'index',
+        component: IndexComponent,
+        children: [
+            { path: 'pro',component: ProComponent},
+            { path: 'product', component: ProductComponent},
+            { path: 'store', component: StoreComponent },
+            { path: 'warn', component: WarningComponent}
+        ]
+     },
+    { path: 'login', component: LoginComponent},
     {path: '**',component: PagenotfoundComponent}
+
 ]
+
 
 export const RootRouter = RouterModule.forRoot(
     appRoutes,

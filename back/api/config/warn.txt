@@ -1,0 +1,24 @@
+{
+    "api":"back/warn.php",
+    "cols":"goodsName,goodsCategory,supplier,inventory,Units,purchasCost",
+    "multiple":false,
+    "filterData":{
+        "Units":{
+            "type":"Regplace",
+            "reg":"kg",
+            "replaceVal":"千克"
+        }
+    },
+    "pagination":{
+        "pageitems":10
+    },
+    "search":{
+        "show":false,
+        "api":"config/storeAttr.txt"
+    },
+    "operate":false,
+    "add":{
+        "show":false
+    },
+    "UUID":"goodsId"
+}

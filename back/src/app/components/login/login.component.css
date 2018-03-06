@@ -1,0 +1,27 @@
+.loginbox{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('http://localhost:888/assets/back.jpg');
+
+
+}
+
+.login-form {
+  width: 300px;
+  max-height:300px;
+  /* position: relative;
+  top:50%;
+  left:50%; */
+  
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+{
+    "cols":"goodsName,goodsCategory,supplier,inventory,Units,purchasCost",
+    "colsAttributes": {
+        "goodsCategory": {
+            "type": "select-api",
+            "api": "back/store.php?type=goodsCategory",
+            "match": {"value": "", "text": "goodsCategory"},
+            "defaultvalue": "蔬菜类"
+        },
+        "supplier":{
+            "type": "select-api",
+            "api": "back/store.php?type=supplier",
+            "match": {"value": "", "text": "supplier"},
+            "defaultvalue": "青青菜园"
+        },
+        "inventory": {
+            "type": "number"
+        },
+         "purchasCost": {
+            "type": "number"
+        }
+    }
+}

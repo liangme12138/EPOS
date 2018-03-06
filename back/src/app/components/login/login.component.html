@@ -1,0 +1,32 @@
+<div class="loginbox">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="_submitForm()">
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input formControlName="userName" [nzPlaceHolder]="'用户名'" [nzSize]="'large'"  [nzDisabled]="disableds">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-user"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')&&show">请输入用户名!</div> -->
+            </div>
+        </div>
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'密码'" [nzSize]="'large'" [nzDisabled]="disableds">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')&&show">请输入密码!</div> -->
+                <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required') || validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required') || show " style="color:red;">请输入正确的用户名或者密码!</div>
+            </div>
+        </div>
+        <div nz-form-item>
+            <div nz-form-control>
+                    <button nz-button  class="login-form-button" [nzType]="'primary'" [nzLoading]="isLoadingOne" style="font-size:16px;height:40px;line-height:40px;display:block;">
+                        <span>登 录</span>
+                    </button>
+            </div>
+        </div>
+    </form>
+</div>
