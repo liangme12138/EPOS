@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
+import { FormBuilder} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
@@ -16,6 +19,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { RangePipe } from './utils/range.pipe';
 import {DataGridComponent} from './components/datagrid/datagrid.component';
 import {DataformComponent} from './components/dataform/dataform.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +29,14 @@ import {DataformComponent} from './components/dataform/dataform.component';
     PagenotfoundComponent,
     RangePipe,
     DataGridComponent,
-    DataformComponent
+    DataformComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RootRouter,
     HttpModule,
     NgZorroAntdModule.forRoot(),
@@ -36,8 +44,9 @@ import {DataformComponent} from './components/dataform/dataform.component';
   ],
   providers: [
     CommonService,
-    HttpService
+    HttpService,
+    FormBuilder,
   ],
-  bootstrap: [IndexComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

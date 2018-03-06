@@ -6,7 +6,7 @@
         // $servername = '10.3.136.55';
         // $password = 'root';
         $username = 'root';
-        $database = 'pet';
+        $database = 'epos';
         header('Access-Control-Allow-Origin:*');
         //连接数据库
         $conn = new mysqli($servername, $username, $password, $database);
@@ -63,7 +63,7 @@ function connect() {
     // $servername = "10.3.136.55";
     $username = "root";
     // $password = "root";
-    $dbname = 'pet';
+    $dbname = 'epos';
     // 初始化连接，返回一个连接对象(包含所连接数据库的信息)
     $con = mysqli_connect($servername, $username, $password, $database);
     header('Access-Control-Allow-Origin:*');
