@@ -1,26 +1,108 @@
-.body {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
+    #home {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 
-.body .nav {
-    height: 40px;
-    display: flex;
-    border-bottom: 1px solid #ccc;
-}
+    #home>header {
+        /* height: 50px; */
+        /* flex: 1; */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
 
-.body .nav>li {
-    flex: 1;
-    line-height: 40px;
-    text-align: center;
-}
+    #home>.body {
+        /* flex: 1; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        /* position: relative; */
+    }
 
-.body .container {
-    flex: 1;
-    overflow-x: hidden;
-}
+    #home>.body>.nav {
+        margin-top: 50px;
+        height: 40px;
+        display: flex;
+        border-bottom: 1px solid #ccc;
+    }
 
-.body .footer {
-    /* height: 40px; */
-}
+    #home>.body>.nav>li {
+        flex: 1;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    #home>.body>.container {
+        flex: 1;
+        overflow-x: hidden;
+    }
+
+    #home>.footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        /* height: 40px; */
+        /* flex: 1; */
+    }
+
+    #home>.footer>.car {
+        height: 40px;
+        background: #1C1B20;
+        display: flex;
+    }
+
+    #home>.footer>.car .car_left {
+        position: relative;
+        flex: 1;
+    }
+
+    #home>.footer>.car .car_left .carIcon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: red;
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        position: relative;
+    }
+
+    #home>.footer>.car .carIcon .carNum {
+        position: absolute;
+        font-size: 12px;
+        /* left: 50%;
+        top:50%;
+        margin-left: -3px;
+        margin-top:-10px; */
+        width: 18px;
+        height: 18px;
+        background: #fff;
+        left: 22px;
+        top: 4px;
+        border-radius: 50%;
+    }
+
+    .icon-gouwucheman {
+        text-align: center;
+        line-height: 46px;
+        font-size: 26px;
+        color: #fff;
+    }
+
+    #home>.footer>.car>.price {
+        flex: 3;
+        color:#fff;
+        text-align: left;
+        padding-left: 20px;
+        line-height: 40px;
+    }
+
+    #home>.footer>.car>.checkBtn{
+        flex: 1
+    }

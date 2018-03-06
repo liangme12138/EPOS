@@ -5,7 +5,7 @@ import { WeUiModule } from 'ngx-weui';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax'
-
+import { ElModule } from 'element-angular'
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
 import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
+import { HotSalesPipe } from '../pipe/hot-sales.pipe';
 
 
 @NgModule({
@@ -40,13 +41,15 @@ import { PublicMenusComponent } from './public-menus/public-menus.component';
     HeaderComponent,
     MenusComponent,
     OrderComponent,
-    PublicMenusComponent
+    PublicMenusComponent,
+    HotSalesPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    ElModule.forRoot(),
     // WeUiModule.forRoot()
   ],
   providers: [HttpService],

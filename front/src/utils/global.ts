@@ -1,3 +1,5 @@
 export default {
-    lanType: 'en'
+    lanType: 'en',
+    count:0,
+    TotalPrice: 0
 }
