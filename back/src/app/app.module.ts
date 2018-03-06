@@ -16,6 +16,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { RangePipe } from './utils/range.pipe';
 import {DataGridComponent} from './components/datagrid/datagrid.component';
 import {DataformComponent} from './components/dataform/dataform.component';
+import { ProComponent } from './components/pro/pro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import {DataformComponent} from './components/dataform/dataform.component';
     PagenotfoundComponent,
     RangePipe,
     DataGridComponent,
-    DataformComponent
+    DataformComponent,
+    ProComponent
   ],
   imports: [
     BrowserModule,
