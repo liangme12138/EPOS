@@ -6,7 +6,13 @@
         "price":"Price",
         "Like":"Like",
         "addTime":"Add Time",
-        "eg2":"Discounts"
+        "eg2":"Discounts",
+        "userId":"UserId",
+        "userName":"UserName",
+        "password":"Password",
+        "orderId":"OrderId",
+        "status":"Status",
+        "identify":"Identify"
     },
     "cn":{
        "foodName":"食品名称",
@@ -15,6 +21,12 @@
         "price":"价格",
         "Like":"收藏量",
         "addTime":"添加时间",
-        "eg2":"限时打折"
+        "eg2":"限时打折",
+        "userId":"员工ID",
+        "userName":"员工名称",
+        "password":"密码",
+        "orderId":"订单号",
+        "status":"订单状态",
+        "identify":"职位"
     }
 }

@@ -57,9 +57,13 @@ export class DataGridComponent implements OnInit, DoCheck{
     
     @Input() config: string;
 
+    showidentify: boolean = false;
+
+
     constructor(private http: HttpService, private common: CommonService){}
     
     ngOnInit(){
+        
         //获取当前模块的配置
         this.http.get(this.config).then((configRes) => {    
             let cols = configRes['cols'];
@@ -77,6 +81,14 @@ export class DataGridComponent implements OnInit, DoCheck{
             this.addConfig = configRes['add'] || {};
             this.UUIDConfig = configRes['UUID'] || '';
             this.apiRequest();
+            // 获取身份
+            let id = localStorage.getItem( 'identify' );
+            if ( id == "管理员" ) {
+                this.showidentify = true;
+            } else if ( id == "员工" ) {
+                this.showidentify = false;
+                this.addConfig['show'] = false;
+            }
           
         })
     }
@@ -126,9 +138,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             console.log(this.objData)
             this.http.get( this.apiConfig, pageParams ).then( ( res ) =>
             {
-                this.dataset = res['data1'];
-                this.rowsCount = res['data2'][0]['colsCount'];//总记录数
-                this.pageCount = Math.ceil( this.rowsCount / this.PageSize );//计算页数
+                this.orderArray( res );
                 this.type = false;
             } )
 
@@ -204,7 +214,7 @@ export class DataGridComponent implements OnInit, DoCheck{
 
     operate(_obj){
         this.isVisible = true;
-        console.log(_obj)
+        // console.log(_obj)
         this.objData = _obj;
     }
 
@@ -213,7 +223,6 @@ export class DataGridComponent implements OnInit, DoCheck{
         let pageParams = {};
         this._PageSize = this.PageSize;
         this.current = this._current;
-        console.log(this._current)
         if (this.btnShow == true) {
             pageParams['status'] = 'search';
             pageParams['pageitems'] = this.PageSize;
@@ -225,13 +234,30 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['page'] = this._current;
         }
         this.http.get(this.apiConfig, pageParams).then((res) => {
-            this.dataset = res['data1'];
-            this.rowsCount = res['data2'][0]['colsCount'];//总记录数
-            this.pageCount = Math.ceil(this.rowsCount / this.PageSize);//计算页数
+            this.orderArray(res);
+            
             this._value = "";
         })
     }
 
+    // 合并含有orderId字段的数据
+    orderArray(res){
+        if ( res['data1'][0]['orderId'] ) {
+            let data1array = res['data1'];
+            for ( let i = 0; i < data1array.length; i++ ) {
+                for ( let j = i + 1; j < data1array.length; j++ ) {
+                    if ( data1array[i].orderId == data1array[j].orderId ) {
+                        data1array[i].foodName += " , " + data1array[j].foodName;
+                        data1array.splice( j, 1 );
+                        j--;
+                    }
+                }
+            }
+        }
+        this.dataset = res['data1'];
+        this.rowsCount = res['data2'][0]['colsCount'];//总记录数
+        this.pageCount = Math.ceil( this.rowsCount / this.PageSize );//计算页数
+    }
     onSearch(){
         // if (this._value == ""){
         //     this.btnShow = true;
@@ -267,9 +293,8 @@ export class DataGridComponent implements OnInit, DoCheck{
         pageParams['pageitems'] = this.PageSize;
         pageParams['page'] = this._current;
         this.http.get(this.apiConfig, pageParams).then((res) => {
-            this.dataset = res['data1'];
-            this.rowsCount = res['data2'][0]['colsCount'];//总记录数
-            this.pageCount = Math.ceil(this.rowsCount / this.PageSize);//计算页数
+            this.orderArray( res );
+            
         })
     }
 

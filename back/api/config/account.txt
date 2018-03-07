@@ -1,0 +1,32 @@
+{
+    "api":"back/account.php",
+    "cols":"*",
+    "dictionary":{
+        "cn":{
+            "addTime":"添加时间"
+        }
+    },
+    "filterData":{
+        "addTime":{
+            "type":"DateFormat",
+            "format":"yyyy/MM/dd hh:mm:ss"
+        },
+        "password":{
+            "type":"Regplace",
+            "reg":"(.).+",
+            "replaceVal":"$1**"
+        }
+    },
+    "pagination":{
+        "pageitems":10
+    },
+    "operate": true,
+    "add":{
+        "show":true
+    },
+    "search":{
+        "show":true,
+        "api":"config/accountAttr.txt"
+    },
+    "UUID":"userId"
+}

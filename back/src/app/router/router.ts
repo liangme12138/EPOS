@@ -5,6 +5,9 @@ import { LoginComponent } from '../components/login/login.component';
 import { IndexComponent } from '../components/index/index.component';
 import { PagenotfoundComponent } from '../components/pagenotfound/pagenotfound.component';
 import { ProductComponent } from '../components/product/product.component';
+import { AccountComponent } from '../components/account/account.component';
+import { OrderComponent } from '../components/order/order.component';
+import { DailyOrderComponent } from '../components/daily-order/daily-order.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -13,7 +16,10 @@ const appRoutes: Routes = [
         component: IndexComponent,
         children: [
             { path: 'pro',component: ProComponent},
-            { path: 'product', component: ProductComponent},
+            { path: 'product', component: ProductComponent },
+            { path: 'account', component: AccountComponent },
+            { path: 'order', component: OrderComponent },
+            { path: 'dailyOrder', component: DailyOrderComponent},
         ]
      },
     { path: 'login', component: LoginComponent},

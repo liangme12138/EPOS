@@ -22,6 +22,9 @@ import {DataformComponent} from './components/dataform/dataform.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProComponent } from './components/pro/pro.component';
+import { AccountComponent } from './components/account/account.component';
+import { OrderComponent } from './components/order/order.component';
+import { DailyOrderComponent } from './components/daily-order/daily-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,10 @@ import { ProComponent } from './components/pro/pro.component';
     DataformComponent,
     LoginComponent,
     HomeComponent,
-    ProComponent
+    ProComponent,
+    AccountComponent,
+    OrderComponent,
+    DailyOrderComponent
   ],
   imports: [
     BrowserModule,

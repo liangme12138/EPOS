@@ -38,7 +38,7 @@
                 <ng-template ngFor let-key [ngForOf]="getKeys(dataset[0])" >
                     <th *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key]:common.publicDic[common.lanType][key] || key}}</th>
                 </ng-template>
-                <th *ngIf="operateConfig">{{common.lanType == 'en' ? 'Operate' : '操作'}}</th>
+                <th *ngIf="addConfig.show">{{common.lanType == 'en' ? 'Operate' : '操作'}}</th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +50,7 @@
                 <ng-template ngFor let-key [ngForOf]="getKeys(obj)">
                     <td *ngIf="(!columns[0] || columns.indexOf(key) > -1) &&  filterColumns.indexOf(key) < 0">{{filterData(key, obj[key])}}</td>
                 </ng-template>
-                <td *ngIf="operateConfig">
+                <td *ngIf="addConfig.show">
                     <button nz-button [nzType]="'primary'"  (click)="operate(obj)">编辑</button>
                 </td>
             </tr>

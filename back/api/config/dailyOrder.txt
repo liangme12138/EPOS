@@ -1,0 +1,27 @@
+{
+    "api":"back/dailyOrder.php",
+    "cols":"*",
+    "dictionary":{
+        "cn":{
+            "addTime":"添加时间"
+        }
+    },
+    "filterData":{
+        "addTime":{
+            "type":"DateFormat",
+            "format":"yyyy-MM-dd hh:mm:ss"
+        }
+    },
+    "pagination":{
+        "pageitems":10
+    },
+    "search":{
+        "show":false,
+        "api":"config/accountAttr.txt"
+    },
+    "operate": false,
+    "add":{
+        "show":false
+    },
+    "UUID":"orderId"
+}
