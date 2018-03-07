@@ -16,6 +16,7 @@
     }
 
     #home>.body {
+        padding-bottom: 97px;
         /* flex: 1; */
         height: 100%;
         display: flex;
@@ -86,6 +87,7 @@
         left: 22px;
         top: 4px;
         border-radius: 50%;
+        color: #F36653
     }
 
     .icon-gouwucheman {
@@ -97,12 +99,18 @@
 
     #home>.footer>.car>.price {
         flex: 3;
-        color:#fff;
+        color: #fff;
         text-align: left;
         padding-left: 20px;
         line-height: 40px;
     }
 
-    #home>.footer>.car>.checkBtn{
-        flex: 1
+    #home>.footer>.car>.checkBtn {
+        flex: 1 ; 
+        border: none;
+        color:#fff;
+        background: #F36653;
+        padding:0 20px;
+        font-size: 18px;
+        /* font-weight: bold; */
     }

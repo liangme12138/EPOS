@@ -15,6 +15,6 @@ export class PublicMenusComponent implements OnInit {
         this.router.navigate(['/home/menus']);
     }
     toOrder(){
-        this.router.navigate(['/home/order']);
+        this.router.navigate(['/order']);
     }
 } 
