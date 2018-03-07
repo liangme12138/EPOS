@@ -52,6 +52,8 @@ export class DataGridComponent implements OnInit, DoCheck{
     type: boolean;
     showDisabled: boolean =true;
 
+    errorTip: boolean = false;
+
     @ViewChild('objs1')
     objs1: DataformComponent;
     
@@ -137,18 +139,28 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['data'] = this.objData;
             this.http.get( this.apiConfig, pageParams ).then( ( res ) =>
             {
-                this.orderArray( res );
-                this.type = false;
+                console.log(res)
+                if(res == "fail"){
+                    this.errorTip = true;
+                    this.isConfirmLoading = false;
+                }else{
+                    this.orderArray( res );
+                    this.type = false;
+                    this.isVisible = false;
+                    this.isConfirmLoading = false;
+                    this.objData = {};
+                    this.showDisabled = true;
+                    this.errorTip = false;
+                }
             } )
 
-            this.isVisible = false;
-            this.isConfirmLoading = false;
-            this.objData = {};
         }, 1000);
     }
 
     handleCancel = (e) => {
         this.isVisible = false;
+        this.errorTip = false;
+        this.showDisabled = true;
         this.objData = {};
     }
     getKeys(item){
@@ -217,6 +229,7 @@ export class DataGridComponent implements OnInit, DoCheck{
     operate(_obj,idx){
         this.isVisible = true;
         this.objData = _obj;
+        this.errorTip = false;
         this.currentTrArray = [idx];
     }
 
@@ -236,11 +249,25 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['page'] = this._current;
         }
         this.http.get(this.apiConfig, pageParams).then((res) => {
-            this.orderArray(res);
             
-            this._value = "";
-            
-           
+            // if ( res == "fail" ) {
+            //     this.errorTip = true;
+            //     this.isConfirmLoading = false;
+            // } else {
+            //     this.orderArray( res );
+            //     this.type = false;
+            //     this.isVisible = false;
+            //     this.isConfirmLoading = false;
+            //     this.objData = {};
+            //     this.errorTip = false;
+            //     this._value = "";
+            // }
+            this.orderArray( res );
+            this.type = false;
+            this.isVisible = false;
+            this.errorTip = false;
+            this.isConfirmLoading = false;
+            this.objData = {};
         })
     }
 
@@ -265,7 +292,6 @@ export class DataGridComponent implements OnInit, DoCheck{
             this._value = "";
         }
         else {
-            console.log(res)
             this.dataset = [];
             this.rowsCount = 0;
             this.pageCount = 0;
