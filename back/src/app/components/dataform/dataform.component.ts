@@ -21,12 +21,7 @@ export class DataformComponent implements OnInit {
   
 
   ngOnInit() {
-    this.validateForm = this.fb.group( {} );
-
-    for ( let i = 0; i < 10; i++ ) {
-      this.controlArray.push( { index: i, show: i < 6 } );
-      this.validateForm.addControl( `field${i}`, new FormControl() );
-    }
+    
 
     this.http.get(this.api).then((configRes)=>{
       
