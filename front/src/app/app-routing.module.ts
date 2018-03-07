@@ -41,6 +41,9 @@ const routes: Routes = [
   {path:'reg',component:RegComponent},
   { path:'menus', component: MenusComponent},
   {path:'quickLogin',component:QuickLoginComponent},
+  {
+    path: 'order', component: OrderComponent
+  },
   {path:'**',component:Page404Component}
 ];
 

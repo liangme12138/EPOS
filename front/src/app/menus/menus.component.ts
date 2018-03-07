@@ -66,6 +66,7 @@ export class MenusComponent implements OnInit {
         this.http.post('car.php', { state: 'addQty', foodId: foodId, userPhone: this.userPhone}).then((res) => {
             if (res == 'seccese'){
                 this.store['count']++;
+                this.store['TotalPrice'] += (price*1)
                 // console.log(res);
                 if (this.qtyId.indexOf(foodId)>-1){
                     this.counts[this.qtyId.indexOf(foodId)]=(this.counts[this.qtyId.indexOf(foodId)]*1)+1;
@@ -77,12 +78,13 @@ export class MenusComponent implements OnInit {
             }
         })
     }
-    subQty(foodId) {
+    subQty(foodId, price) {
         // this.qtys--;
         this.http.post('car.php', { state: 'subQty', foodId: foodId, userPhone: this.userPhone }).then((res) => {
             if (res == 'seccese') {
                 // console.log(res);
                 this.store['count']--;
+                this.store['TotalPrice'] -= (price * 1)
                 if (this.qtyId.indexOf(foodId) > -1) {
                     if ((this.counts[this.qtyId.indexOf(foodId)] * 1) - 1   <   1){
                         

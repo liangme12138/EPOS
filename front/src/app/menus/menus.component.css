@@ -19,6 +19,73 @@
     flex: 2.5;
 }
 
+.menus .menus_item .menusInfor {
+    display: flex;
+    padding: 10px 0 0 10px;
+}
+
+.menus .menus_item .menusInfor .foodMenuImg {
+    /* flex: 1; */
+    width: 50px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.menus .menus_item .menusInfor .foodInfor {
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.menus .menus_item .menusInfor .foodInfor>h3 {
+    font-size: 18px;
+    font-family: '微软雅黑';
+    /* height: 30px;
+    line-height: 30px; */
+}
+
+.menus .menus_item .menusInfor .foodInfor>ul {
+    /* width: 100%; */
+    /* display: flex; */
+    display: inline-block;
+}
+
+.menus .menus_item .menusInfor .foodInfor>ul>li {
+    /* flex: 1; */
+    float: left;
+    font-size: 6px;
+    padding: 1px 3px;
+    /* color: #ccc; */
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.menus .menus_item .menusInfor .foodInfor>p {
+    display: inline-block;
+}
+
+.menus .menus_item .menusInfor .foodInfor>p>span {
+    display: block;
+    float: left;
+    font-size: 6px;
+    margin-right: 10px;
+}
+
+.menus .menus_item .menusInfor .foodInfor>h4 {
+    color: #F36653
+}
+
+.menus .menus_item .menusInfor .foodInfor .countBtns {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+}
+
+.menus .menus_item .menusInfor .foodInfor .countBtns i {
+    color: #F36653
+}
+
 .actived {
     background: #428bca;
     color: #fff;
