@@ -12,10 +12,16 @@
         "password":"Password",
         "orderId":"OrderId",
         "status":"Status",
-        "identify":"Identify"
+        "identify":"Identify",
+        "goodsName":"Goods Name",
+        "goodsCategory":"Goods Category",
+        "supplier":"supplier",
+        "inventory":"Inventory",
+        "purchasCost":"PurchaseCost",
+        "Units":"Units"
     },
     "cn":{
-       "foodName":"食品名称",
+       "foodName":"菜名",
         "CategoryName":"分类",
         "sale":"销量",
         "price":"价格",
@@ -27,6 +33,13 @@
         "password":"密码",
         "orderId":"订单号",
         "status":"订单状态",
-        "identify":"职位"
+        "identify":"职位",
+        "goodsName":"材料名称",
+        "goodsCategory":"材料分类",
+        "supplier":"供应商",
+        "inventory":"库存",
+        "purchasCost":"进货价",
+        "Units":"单位"
+
     }
 }

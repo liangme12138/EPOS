@@ -10,5 +10,9 @@
         $sql = "SELECT * from foods WHERE Category = '$menuID'";
         $result = query_oop($sql);
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    } else if ($state == 'getMenusHot'){
+        $sql = "SELECT * from foods";
+        $result = query_oop($sql);
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }
 ?>

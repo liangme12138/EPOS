@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import global from '../../utils/global'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,6 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  store: Object = global;
   constructor(private routeInfo:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {

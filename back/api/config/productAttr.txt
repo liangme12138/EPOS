@@ -3,7 +3,7 @@
     "colsAttributes": {
         "CategoryName": {
             "type": "select-api",
-            "api": "back/category.php",
+            "api": "back/product.php?type=CategoryName",
             "match": {"value": "CategoryId", "text": "CategoryName"},
             "defaultvalue": "主食"
         },

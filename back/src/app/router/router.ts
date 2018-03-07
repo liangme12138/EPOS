@@ -9,6 +9,8 @@ import { AccountComponent } from '../components/account/account.component';
 import { OrderComponent } from '../components/order/order.component';
 import { DailyOrderComponent } from '../components/daily-order/daily-order.component';
 
+import {StoreComponent} from '../components/store/store.component'
+import {WarningComponent} from '../components/warning/warning.component'
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
     { 
@@ -20,6 +22,9 @@ const appRoutes: Routes = [
             { path: 'account', component: AccountComponent },
             { path: 'order', component: OrderComponent },
             { path: 'dailyOrder', component: DailyOrderComponent},
+            { path: 'product', component: ProductComponent},
+            { path: 'store', component: StoreComponent },
+            { path: 'warn', component: WarningComponent}
         ]
      },
     { path: 'login', component: LoginComponent},

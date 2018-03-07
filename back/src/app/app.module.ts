@@ -25,6 +25,8 @@ import { ProComponent } from './components/pro/pro.component';
 import { AccountComponent } from './components/account/account.component';
 import { OrderComponent } from './components/order/order.component';
 import { DailyOrderComponent } from './components/daily-order/daily-order.component';
+import { StoreComponent } from './components/store/store.component';
+import { WarningComponent } from './components/warning/warning.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { DailyOrderComponent } from './components/daily-order/daily-order.compon
     ProComponent,
     AccountComponent,
     OrderComponent,
-    DailyOrderComponent
+    DailyOrderComponent,
+    StoreComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,

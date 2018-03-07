@@ -9,8 +9,9 @@
     $sql = "select SQL_CALC_FOUND_ROWS  `order`.orderId,`order`.userId,`order`.status,foods.foodName,orderfoods.addTime from `order`,orderfoods,foods where `order`.orderId = orderfoods.orderId and foods.foodId = orderfoods.foodId";
     if($status == "search"){
         $sql .= " and (`order`.orderId like '%$content%' or `order`.userId like '%$content%' or `order`.status like '%$content%' or orderfoods.foodId like '%$content%' or foods.foodName like '%$content%' or `order`.addTime like '%$content%')";
-        $result = query_oop($sql);
-        if( $result){
+        $result = multi_query_oop($sql);
+        // var_dump($result);
+        if($result){
             $sql1 = "select SQL_CALC_FOUND_ROWS  `order`.orderId,`order`.userId,`order`.status,foods.foodName,orderfoods.addTime from `order`,orderfoods,foods where `order`.orderId = orderfoods.orderId and foods.foodId = orderfoods.foodId and (";
             for($i=0;$i<count($result);$i++){
                 $ids = $result[$i]['orderId'];
@@ -27,8 +28,9 @@
             $result1 = multi_query_oop($sql1);
             echo json_encode($result1, JSON_UNESCAPED_UNICODE);
         }else{
-            echo 'fail';
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
         }
+        
     }else{
         if($page && $pageitems){
             $no=($page-1)*$pageitems;

@@ -3,9 +3,15 @@
     <i class="iconfont icon-fanhui back"></i>
     <h2>手机号登录</h2>
   </div>
+  <div class="img">
+    <img src="http://via.placeholder.com/375x200" alt="">
+  </div>
   <div class="lg-body">
-    <input type="text" class='tel' placeholder="请输入手机号" [(ngModel)]="tel" (blur)="telBtn()"><br />
-    <input type="text" class="password" placeholder="请输入密码" [(ngModel)]="pwd" (blur)="pwdBtn()"><br />
-    <button (click)="toLogin()">登录</button>
+    <el-input [(ngModel)]="tel" placeholder="请输入手机号" (blur)="telBtn()"></el-input>
+    <el-input native-type="password" [(ngModel)]="pwd" placeholder="请输入密码" (blur)="pwdBtn()"></el-input>
+    <el-button type="primary" native-type="submit" icon="upload" (click)="toLogin()">登录</el-button>
+    <br>
+    <a [routerLink]="['/quickLogin']">手机快捷登陆</a>
   </div>
 </div>
+
