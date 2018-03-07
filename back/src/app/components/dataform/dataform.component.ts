@@ -1,12 +1,7 @@
 import { Component, OnInit,Input,Output} from '@angular/core';
 import {HttpService} from '../../utils/ajax'
 import {CommonService} from '../../utils/common.service'
-import
-{
-  FormBuilder,
-  FormGroup,
-  FormControl
-} from '@angular/forms';
+
 @Component({
   selector: 'dataform',
   templateUrl: './dataform.component.html',
@@ -21,25 +16,9 @@ export class DataformComponent implements OnInit {
   colsAttributes:Object={};
   selectApiDataset:Object={};
 
-  constructor( private http: HttpService, private common: CommonService, private fb: FormBuilder) { }
+  constructor( private http: HttpService, private common: CommonService) { }
 
-  validateForm: FormGroup;
-  controlArray = [];
-  isCollapse = true;
-
-  toggleCollapse ()
-  {
-    this.isCollapse = !this.isCollapse;
-    this.controlArray.forEach( ( c, index ) =>
-    {
-      c.show = this.isCollapse ? ( index < 6 ) : true;
-    } )
-  }
-
-  resetForm ()
-  {
-    this.validateForm.reset();
-  }
+  
 
   ngOnInit() {
     this.validateForm = this.fb.group( {} );
