@@ -123,7 +123,6 @@ export class DataGridComponent implements OnInit, DoCheck{
             pageParams['pageitems'] = this.PageSize;
             pageParams['page'] = this._current;
             pageParams['data'] = this.objData;
-            console.log(this.objData)
             this.http.get( this.apiConfig, pageParams ).then( ( res ) =>
             {
                 this.dataset = res['data1'];
@@ -143,7 +142,11 @@ export class DataGridComponent implements OnInit, DoCheck{
         this.objData = {};
     }
     getKeys(item){
-        return Object.keys(item);
+        if(item){
+            console.log(item)
+            return Object.keys(item);
+        }
+        
     }
     selectTr(_idx,event){
         if (this.multiple && event.target.tagName != "BUTTON"){
@@ -226,10 +229,18 @@ export class DataGridComponent implements OnInit, DoCheck{
         }
         console.log(this.apiConfig)
         this.http.get(this.apiConfig, pageParams).then((res) => {
-            this.dataset = res['data1'];
-            this.rowsCount = res['data2'][0]['colsCount'];//总记录数
-            this.pageCount = Math.ceil(this.rowsCount / this.PageSize);//计算页数
-            this._value = "";
+            if (res['data1'].length>0){
+                this.dataset = res['data1'];
+                this.rowsCount = res['data2'][0]['colsCount'];//总记录数
+                this.pageCount = Math.ceil(this.rowsCount / this.PageSize);//计算页数
+                this._value = "";
+            }
+            else{
+                this.dataset=[];
+                this.pageCount=0;
+                this._value = "";
+            }
+           
         })
     }
 
