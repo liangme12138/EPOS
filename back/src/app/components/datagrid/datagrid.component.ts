@@ -237,6 +237,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             }
             else{
                 this.dataset=[];
+                this.rowsCount=0;
                 this.pageCount=0;
                 this._value = "";
             }
@@ -282,6 +283,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             this.dataset = res['data1'];
             this.rowsCount = res['data2'][0]['colsCount'];//总记录数
             this.pageCount = Math.ceil(this.rowsCount / this.PageSize);//计算页数
+            this.currentTrArray=[];
         })
     }
 
