@@ -1,0 +1,15 @@
+<ul class="nouseUl" *ngFor="let obj of data">
+  <li *ngIf="obj.status == 3">
+    <h3 class="title">{{obj.title}}</h3>
+    <p class="p1">{{obj.introduce}}</p>
+    <span class="s1">
+      <i class="iconfont icon-youhuiquan quan"></i>
+      <h4 class="h4">{{obj.discount}}</h4>
+      <p class="p2">活动时间:</p>
+      <p class="p3">{{obj.time}}</p>
+    </span>
+  </li>
+  <!-- <li>
+
+  </li> -->
+</ul>

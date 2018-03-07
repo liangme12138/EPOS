@@ -1,0 +1,23 @@
+.dt-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #F5F6F8;
+}
+.dt-ul{
+    display: flex;
+    flex: 1;
+    height: 30px;
+    line-height: 30px;
+}
+.dt-ul li{
+    flex: 1;;
+    color: #AFAFAF;
+    background: white;
+    /* color: #E85D4D;
+    border-bottom: 4px solid #E85D4D;
+    border-bottom-width: 5px; */
+}
+.content{
+    width: 100%;
+}

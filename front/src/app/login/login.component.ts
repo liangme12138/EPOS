@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { HttpService } from '../../utils/ajax';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +10,9 @@ import { HttpService } from '../../utils/ajax';
 export class LoginComponent implements OnInit {
   private tel:string;
   private pwd:string;
-  constructor(private routeInfo: ActivatedRoute, private http: HttpService,private router:Router) { }
+  private arrInfo:Array<any>=[];
+  private telInfo:Array<any>;
+  constructor(private routeInfo: ActivatedRoute, private http: HttpService, private router: Router) { }
   
   ngOnInit() {
     
@@ -35,13 +36,16 @@ export class LoginComponent implements OnInit {
           alert('密码有误!');
           return false;
         } else if (res === 'loginsuccess'){
-          this.router.navigate(['/home/menus'])
+          this.arrInfo.push(telVal);
+          this.arrInfo.push(pwdVal);
+          var str = JSON.stringify(this.arrInfo);
+          window.localStorage.setItem('telInfo',telVal);
+          console.log(this.telInfo,'6666')
+          // this.router.navigate(['/home/menus'])
         }
       })
     }
-    
   }
-
   telBtn(){
     var telVal = this.tel;
     var telReg = /^[1][3,4,5,7,8][0-9]{9}$/;
@@ -59,5 +63,4 @@ export class LoginComponent implements OnInit {
       return false;
     }
   }
-
 }

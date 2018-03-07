@@ -12,9 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
 import { MenusComponent } from './menus/menus.component'
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { CenterComponent } from './center/center.component';
+import { DiscountComponent } from './discount/discount.component';
+import { UsedComponent } from './used/used.component';
+import { NouseComponent } from './nouse/nouse.component';
+import { TimeoutComponent } from './timeout/timeout.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home/menus',pathMatch:'full'},
+  { path:'discount',redirectTo:'/discount/nouse',pathMatch:'full'},
   {path:'home',component:HomeComponent,
     children: [
       {
@@ -41,6 +47,13 @@ const routes: Routes = [
   {path:'reg',component:RegComponent},
   { path:'menus', component: MenusComponent},
   {path:'quickLogin',component:QuickLoginComponent},
+  {path:'center',component:CenterComponent},
+  {path: 'discount', component: DiscountComponent,
+    children: [
+      {path:'used',component:UsedComponent},
+      {path:'nouse',component:NouseComponent},
+      {path:'timeout',component:TimeoutComponent}
+    ]
   {
     path: 'order', component: OrderComponent
   },

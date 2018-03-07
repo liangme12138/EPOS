@@ -1,0 +1,39 @@
+.nouseUl li{
+    background: white;
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+}
+.nouseUl li .title{
+    text-align: left;
+    font-size: 16px;
+}
+.nouseUl li .p1{
+    font-size: 14px;
+    color: #cccc;
+    text-align: left;
+}
+.nouseUl li .s1{
+    display: inline-block;
+    background: #F7E3DC;
+    width: 100%;
+}
+.nouseUl li .s1 .quan{
+    position: absolute;
+    left: 25px;
+    font-size: 40px;
+}
+.nouseUl li .s1 .p2{
+    color: #aaaa;
+    font-size: 12px;
+}
+.nouseUl li .s1 .h4{
+    font-family: 'NSimSun';
+
+}
+
+
+.nouseUl li .s1 .p3{
+    color: #aaaa;
+    font-size: 12px;
+
+}
