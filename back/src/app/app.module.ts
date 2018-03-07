@@ -22,6 +22,9 @@ import {DataformComponent} from './components/dataform/dataform.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProComponent } from './components/pro/pro.component';
+import { AccountComponent } from './components/account/account.component';
+import { OrderComponent } from './components/order/order.component';
+import { DailyOrderComponent } from './components/daily-order/daily-order.component';
 import { StoreComponent } from './components/store/store.component';
 import { WarningComponent } from './components/warning/warning.component';
 @NgModule({
@@ -36,6 +39,9 @@ import { WarningComponent } from './components/warning/warning.component';
     LoginComponent,
     HomeComponent,
     ProComponent,
+    AccountComponent,
+    OrderComponent,
+    DailyOrderComponent,
     StoreComponent,
     WarningComponent
   ],
