@@ -1,0 +1,116 @@
+.order_body .orderBanner {
+    width: 100%;
+    /* height: 150px; */
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.order_body .orderBanner>img {
+    display: block;
+    width: 100%;
+}
+
+.orders {
+    /* height: 150px; */
+    background: #eee;
+    padding-bottom: 10px;
+}
+
+.orders>h4 {
+    height: 40px;
+    line-height: 40px;
+    font-weight: normal;
+    background: #fff;
+}
+
+.orders .order_top {
+    display: flex;
+}
+
+.orders .order_top>p {
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.orders .order_top>p:first-child {
+    flex: 1.5;
+    text-align: left;
+}
+
+.orders .order_top>p:first-child>i {
+    margin-right: 10px;
+}
+
+.orders .order_top>p:last-child {
+    text-align: right;
+    flex: 1;
+}
+
+.orders>ul {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 0 20px;
+}
+
+.orders>ul>li {
+    height: 30px;
+}
+
+.orders>ul>li>span {
+    display: block;
+}
+
+.orders>ul>li>span:first-child {
+    float: left;
+}
+
+.orders>ul>li>span:last-child {
+    float: right;
+}
+
+.orders .order_bottom {
+    display: flex;
+    padding: 0 10px;
+}
+
+.orders .order_bottom>span {
+    display: block;
+    text-align: left;
+}
+
+.orders .order_bottom>span:first-child {
+    flex: 2;
+}
+
+.orders .order_bottom>span:nth-child(2) {
+    flex: 1;
+}
+
+.orders .order_bottom>span:nth-child(3) {
+    flex: .7;
+    border: 1px solid #F36653;
+    margin: 10px 5px;
+    height: 20px;
+    font-size: 6px;
+    line-height: 20px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.orderFooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+.ordersTab{
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    border-bottom:1px solid #ccc;
+}
+.ordersTab>li{
+    flex: 1;
+}

@@ -1,0 +1,10 @@
+{
+    "cols":"userName,password,identify",
+    "colsAttributes": {
+        "identify": {
+            "type": "select",
+            "data": [{"value": "", "text": "员工"},{"value": "", "text": "管理员"}],
+            "defaultvalue": "员工"
+        }
+    }
+}

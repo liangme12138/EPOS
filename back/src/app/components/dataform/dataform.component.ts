@@ -1,6 +1,12 @@
 import { Component, OnInit,Input,Output} from '@angular/core';
 import {HttpService} from '../../utils/ajax'
 import {CommonService} from '../../utils/common.service'
+import
+{
+  FormBuilder,
+  FormGroup,
+  FormControl
+} from '@angular/forms';
 @Component({
   selector: 'dataform',
   templateUrl: './dataform.component.html',
@@ -15,9 +21,34 @@ export class DataformComponent implements OnInit {
   colsAttributes:Object={};
   selectApiDataset:Object={};
 
-  constructor(private http: HttpService, private common: CommonService) { }
+  constructor( private http: HttpService, private common: CommonService, private fb: FormBuilder) { }
+
+  validateForm: FormGroup;
+  controlArray = [];
+  isCollapse = true;
+
+  toggleCollapse ()
+  {
+    this.isCollapse = !this.isCollapse;
+    this.controlArray.forEach( ( c, index ) =>
+    {
+      c.show = this.isCollapse ? ( index < 6 ) : true;
+    } )
+  }
+
+  resetForm ()
+  {
+    this.validateForm.reset();
+  }
 
   ngOnInit() {
+    this.validateForm = this.fb.group( {} );
+
+    for ( let i = 0; i < 10; i++ ) {
+      this.controlArray.push( { index: i, show: i < 6 } );
+      this.validateForm.addControl( `field${i}`, new FormControl() );
+    }
+
     this.http.get(this.api).then((configRes)=>{
       
       this.colsConfig = configRes['cols'].split(',');

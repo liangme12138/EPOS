@@ -18,7 +18,11 @@ export class HttpService{
                 method: RequestMethod.Get,
                 search: params
             })).toPromise().then((res)=>{
-                resolve(res.json())
+                if ( res['_body'] == "fail"){
+                    resolve( res['_body'] )
+                }else{
+                    resolve(res.json())
+                }
             })
         })
     }

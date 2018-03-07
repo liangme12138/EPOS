@@ -5,36 +5,9 @@
     </div>
     <div class="menus_item">
         <div *ngIf="menus">
-           
-                <div *ngFor="let obj of menus" >
-                    <div class="foodMenuImg">
-                        <!-- <img src="http://via.placeholder.com/100x100"> -->
-                    </div>
-                    <div class="foodInfor">
-                        <h3>{{obj.foodName}}</h3>
-                        <ul *ngIf="obj.eg1 || obj.eg2 || obj.eg3">
-                            <li *ngIf="obj.eg1">新品</li>
-                            <li *ngIf="obj.eg2">限时8折</li>
-                            <li *ngIf="obj.eg3">会员价</li>
-                        </ul>
-                        <p><span>月售{{obj.sale}}</span><span>赞{{obj.Like}}</span></p>
-                        <h4>￥{{obj.price}}</h4>
-                        
-                        <div *ngIf="qtyId.indexOf(obj.foodId) > -1; else elseBlock">
-                            <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId,obj.price)"></i>
-                            <span>{{counts[qtyId.indexOf(obj.foodId)]}}</span>
-                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId)"></i>
-                        </div>
-                        <ng-template #elseBlock>
-                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId)"></i>
-                        </ng-template>
-                    </div>
-                </div>
-        </div>
-        <!-- 热销 -->
-        <div *ngIf="hotMenus">
-            <div *ngFor="let obj of [] | hotSales: hotMenus">
+            <div *ngFor="let obj of menus" class="menusInfor">
                 <div class="foodMenuImg">
+                    <img src="../../assets/food1.png">
                 </div>
                 <div class="foodInfor">
                     <h3>{{obj.foodName}}</h3>
@@ -43,19 +16,48 @@
                         <li *ngIf="obj.eg2">限时8折</li>
                         <li *ngIf="obj.eg3">会员价</li>
                     </ul>
-                    <p>
-                        <span>月售{{obj.sale}}</span>
-                        <span>赞{{obj.Like}}</span>
-                    </p>
+                    <p><span>月售{{obj.sale}}</span><span>赞{{obj.Like}}</span></p>
                     <h4>￥{{obj.price}}</h4>
-                    <div *ngIf="qtyId.indexOf(obj.foodId) > -1; else elseBlock">
-                        <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId)"></i>
-                        <span>{{counts[qtyId.indexOf(obj.foodId)]}}</span>
-                        <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId)"></i>
-                    </div>
-                    <ng-template #elseBlock>
-                        <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId)"></i>
-                    </ng-template>
+                    <div  class="countBtns">
+                        <div *ngIf="qtyId.indexOf(obj.foodId) > -1; else elseBlock">
+                            <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId,obj.price)"></i>
+                            <span>{{counts[qtyId.indexOf(obj.foodId)]}}</span>
+                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId,obj.price)"></i>
+
+                        </div>
+                        <ng-template #elseBlock>
+                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId,obj.price)"></i>
+                        </ng-template>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!-- 热销 -->
+        <div *ngIf="hotMenus">
+            <div *ngFor="let obj of [] | hotSales: hotMenus" class="menusInfor">
+                <div class="foodMenuImg">
+                    <img src="../../assets/food1.png">
+                </div>
+                <div class="foodInfor">
+                    <h3>{{obj.foodName}}</h3>
+                    <ul *ngIf="obj.eg1 || obj.eg2 || obj.eg3">
+                        <li *ngIf="obj.eg1">新品</li>
+                        <li *ngIf="obj.eg2">限时8折</li>
+                        <li *ngIf="obj.eg3">会员价</li>
+                    </ul>
+                    <p><span>月售{{obj.sale}}</span><span>赞{{obj.Like}}</span></p>
+                    <h4>￥{{obj.price}}</h4>
+                    <div  class="countBtns">
+                        <div *ngIf="qtyId.indexOf(obj.foodId) > -1; else elseBlock">
+                            <i class="icon-jianhao iconfont" (click)="subQty(obj.foodId,obj.price)"></i>
+                            <span>{{counts[qtyId.indexOf(obj.foodId)]}}</span>
+                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId,obj.price)"></i>
+
+                        </div>
+                        <ng-template #elseBlock>
+                            <i class="icon-jiahao2 iconfont" (click)="addQty(obj.foodId,obj.price)"></i>
+                        </ng-template>
+                    </div> 
                 </div>
             </div>
         </div>

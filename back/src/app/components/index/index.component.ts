@@ -9,12 +9,23 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class IndexComponent implements OnInit {
   isVisible = false;
   isConfirmLoading = false;
-  user: string = "我的梅";
+  user: string ;
+  // showId: boolean = true;
   constructor( private common: CommonService, private routeInfo: ActivatedRoute, private router: Router ) { }
 
   ngOnInit ()
   {
-     
+    // 获取身份
+    if ( !localStorage.getItem( 'identify' ) ) {
+      this.router.navigate( [''] );
+    }else{
+      this.user = localStorage.getItem( 'userName' );
+      // if ( localStorage.getItem( 'identify' ) == "管理员"){
+      //   this.showId = true;
+      // }else{
+      //   this.showId = false;
+      // }
+    }
   }
   showModal = () =>
   {
