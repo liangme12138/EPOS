@@ -23,3 +23,19 @@ h2{
     font-weight: normal;
     margin-left: 15px;
 }
+.img{
+    display: block;
+}
+.img img{
+    width: 100%;
+}
+.lg-body{
+    padding: 20px;
+}
+.lg-body .el-input__inner {
+    display: block;
+    margin-bottom: 20px;
+}
+.el-button{
+    width: 280px;
+}

@@ -1,4 +1,3 @@
-
 .menus {
     display: flex;
     height: 100%;
@@ -13,9 +12,14 @@
     /* height: 30px; */
     /* background: #eee; */
     text-align: left;
-    padding: 10px 15px;
+    padding: 18px 15px;
 }
 
 .menus .menus_item {
     flex: 2.5;
+}
+
+.actived {
+    background: #428bca;
+    color: #fff;
 }
