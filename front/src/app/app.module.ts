@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ElModule } from 'element-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax'
 import { ElModule } from 'element-angular'
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +23,11 @@ import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
 import { HotSalesPipe } from '../pipe/hot-sales.pipe';
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { CenterComponent } from './center/center.component';
+import { DiscountComponent } from './discount/discount.component';
+import { UsedComponent } from './used/used.component';
+import { NouseComponent } from './nouse/nouse.component';
+import { TimeoutComponent } from './timeout/timeout.component';
 
 
 @NgModule({
@@ -43,13 +47,19 @@ import { QuickLoginComponent } from './quick-login/quick-login.component';
     OrderComponent,
     PublicMenusComponent,
     HotSalesPipe,
-    QuickLoginComponent
+    QuickLoginComponent,
+    CenterComponent,
+    DiscountComponent,
+    UsedComponent,
+    NouseComponent,
+    TimeoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     ElModule.forRoot(),
     // WeUiModule.forRoot()
   ],

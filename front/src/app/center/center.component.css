@@ -1,0 +1,61 @@
+.center{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    background: #F5F6F8;
+    overflow: hidden;
+}
+.center .ct-top{
+    height: 250px;
+    background: white;
+    margin-bottom: 20px;
+}
+.ct-top .touxiang {
+    display: inline-block;
+    margin: auto;
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+}
+.touxiang .icon-gerenzhongxin{
+    text-align: center;
+    line-height: 50px;
+    font-size: 42px;
+
+}
+.ct-top h3{
+    /* font-weight: normal; */
+    font-size: 18px;
+}
+.ct-top p{
+    color: #bbbb;
+}
+.ct-top .ctul{
+    display: flex;
+    flex: 1;
+    height: 100px;
+}
+.ctul li{
+    flex: 1;
+    padding-top: 30px;
+}
+.ctul li i,.ctul li span{
+    display: block;
+}
+.ctul li i{
+    font-size: 32px;
+}
+.ctul li span{
+    font-size: 14px;
+}
+
+.center .footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background: white;
+}
