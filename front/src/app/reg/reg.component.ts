@@ -11,6 +11,7 @@ export class RegComponent implements OnInit {
   private pwdCon:string;
   private pwd:string;
   private pwdVal:string;
+  private errorInfo:string='';
   constructor(private routeInfo:ActivatedRoute,private http:HttpService,private router:Router) { }
 
   ngOnInit() {
@@ -20,20 +21,35 @@ export class RegComponent implements OnInit {
     var telVal = this.tel;
     var telReg = /^[1][3,4,5,7,8][0-9]{9}$/;
     if (!telVal) {
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
       return false;
     } else if(!telReg.test(telVal)) {
-      alert('手机号输入有误!')
-      return false;
+      this.errorInfo = '手机号输入有误!';
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+      setTimeout(()=>{
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+      },2000);
+      // return false;
     }else{
       this.http.get('reg.php',{
         telVal:telVal
       }).then((res)=>{
         // console.log(res)
         if(res === true){
-          alert('此用户已存在')
-          return false;
+          this.errorInfo = '此用户已存在!';
+          document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+          setTimeout(() => {
+            document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+          }, 2000);
+          // alert('此用户已存在')
+          // return false;
         }else{
-          alert('此用户可用')
+          // alert('此用户可用')
+          this.errorInfo = '此用户可用!';
+          document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+          setTimeout(() => {
+            document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+          }, 2000);
           return false;
         }
       })
@@ -41,22 +57,28 @@ export class RegComponent implements OnInit {
     // console.log(telVal)    
   }
   pwdReg(){
+    console.log(this.pwd)
     var pwdVal = this.pwd;
     if (!pwdVal) {
       return false;
+    }else{
+      // console.log(pwdVal)
     }
-    // console.log(pwdVal)
   }
   pwdRegCon(){
     var pwdConVal = this.pwdCon;
-    // console.log(this.pwdVal,'33')
+    // console.log(this.pwd,'33')
     // console.log(pwdConVal,'444')
     
     if (!pwdConVal) {
       return false;
-    }else if (pwdConVal !== this.pwdVal){
+    }else if (pwdConVal !== this.pwd){
+      this.errorInfo = '密码输入不一致!';
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+      setTimeout(() => {
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+      }, 2000);
       // alert('密码输入不一致');
-      return false;
     }else{
       return;
     }
@@ -64,9 +86,15 @@ export class RegComponent implements OnInit {
   toReg(){
     var telVal = this.tel;
     var pwdVal = this.pwd;
-    if (!telVal || !pwdVal) {
-      console.log('注册信息有误！')
-      return false;
+    var pwdConVal = this.pwdCon;
+    if (!telVal || !pwdVal || !pwdConVal) {
+      // alert('注册信息有误')
+      this.errorInfo = '注册信息有误!';
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+      setTimeout(() => {
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+      }, 2000);
+      // return false;
     } else {
       this.http.get('reg1.php', {
         telVal: telVal,
@@ -74,7 +102,12 @@ export class RegComponent implements OnInit {
       }).then((res) => {
         console.log(res)
         if (res === 'regOk'){
-          alert('注册成功')
+          // alert('注册成功')
+          this.errorInfo = '注册成功!';
+          document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+          setTimeout(() => {
+            document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+          }, 2000);
           this.router.navigate(['/login']);
         }else{
           alert('注册失败,请稍后再试')
@@ -85,6 +118,9 @@ export class RegComponent implements OnInit {
     }
     // console.log(666)
     
+  }
+  backLogin(){
+    this.router.navigate(['/login'])
   }
 
 }

@@ -10,10 +10,11 @@ import { ElMessageService } from 'element-angular'
 export class HomeComponent implements OnInit {
 
     store: Object = global;
+    private userInfo:string;
     constructor(private routeInfo: ActivatedRoute, private router: Router, private message: ElMessageService) { }
 
     ngOnInit() {
-
+        var userInfo = window.localStorage.getItem('telInfo');
     }
     toProduct(){
         this.router.navigate(['/product',2]);
@@ -22,11 +23,18 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/cart',10])
     }
     toCheckOrder(){
-        console.log(this.store['count'])
-        if (this.store['count'] < 1){
-            this.handle2('error');
-        } else {
-            this.router.navigate(['/confirmorder']);
+        if (!this.userInfo){
+            document.getElementsByClassName('nono')[0].setAttribute('style', 'display:block');
+            setTimeout(() => {
+                this.router.navigate(['/login'])
+            }, 3000);  
+        }else{
+            console.log(this.store['count'])
+            if (this.store['count'] < 1) {
+                this.handle2('error');
+            } else {
+                this.router.navigate(['/confirmorder']);
+            }
         }
     }
     handle2(type: string): void {

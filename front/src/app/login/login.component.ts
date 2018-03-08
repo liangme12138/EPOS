@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   private pwd:string;
   private arrInfo:Array<any>=[];
   private telInfo:Array<any>;
+  private errorInfo: string = '';
+  
   constructor(private routeInfo: ActivatedRoute, private http: HttpService, private router: Router) { }
   
   
@@ -23,7 +25,12 @@ export class LoginComponent implements OnInit {
     var telVal = this.tel;
     var pwdVal = this.pwd;
     if (!telVal || !pwdVal){
-      console.log('登录信息有误！')
+      // console.log('登录信息有误！')
+      this.errorInfo = '登录信息有误!';
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+      setTimeout(() => {
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+      }, 2000);
       return false;
     }else {
       this.http.get('login.php',{
@@ -32,10 +39,20 @@ export class LoginComponent implements OnInit {
       }).then((res)=>{
         console.log(res)
         if(res === 'fail'){
-          alert('用户不存在');
+          // alert('用户不存在');
+          this.errorInfo = '用户不存在!';
+          document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+          setTimeout(() => {
+            document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+          }, 2000);
           return false;
         } else if (res === 'loginfail'){
-          alert('密码有误!');
+          this.errorInfo = '密码有误!';
+          document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+          setTimeout(() => {
+            document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+          }, 2000);
+          // alert('密码有误!');
           return false;
         } else if (res === 'loginsuccess'){
           this.arrInfo.push(telVal);
@@ -58,7 +75,12 @@ export class LoginComponent implements OnInit {
     if(!telVal){
       return false;
     } else if (!telReg.test(telVal)){
-      alert('手机号输入有误!')
+      this.errorInfo = '手机号输入有误!';
+      document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
+      setTimeout(() => {
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+      }, 2000);
+      // alert('手机号输入有误!')
       return false;
     }
   }

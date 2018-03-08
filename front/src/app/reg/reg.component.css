@@ -38,11 +38,14 @@ h2 {
 .lg-body {
   padding: 20px;
 }
+.kong {
+  height: 20px;
+}
 
 .el-input__inner {
   margin-bottom: 20px;
 }
 
-el-button {
+.el-button {
   width: 280px;
 }

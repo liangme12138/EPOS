@@ -7,10 +7,7 @@ import { ElModule } from 'element-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalStorage } from '../utils/local.storage';
-// import { ElModule } from 'element-angular'
-// import { AppRoutingModule } from './app-routing.module';
 
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -66,10 +63,9 @@ import { PayComponent } from './pay/pay.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
+    HttpModule, 
     BrowserAnimationsModule,
-    ElModule.forRoot(),
-    // WeUiModule.forRoot()
+    ElModule.forRoot()
   ],
   providers: [HttpService, LocalStorage],
   bootstrap: [AppComponent]
