@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { DetailsComponent } from './details/details.component';
@@ -13,7 +14,7 @@ import { RegComponent } from './reg/reg.component';
 import { MenusComponent } from './menus/menus.component'
 import { QuickLoginComponent } from './quick-login/quick-login.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-
+import { PayComponent } from './pay/pay.component';
 import { CenterComponent } from './center/center.component';
 import { DiscountComponent } from './discount/discount.component';
 import { UsedComponent } from './used/used.component';
@@ -63,6 +64,7 @@ const routes: Routes = [
   {
     path: 'order', component: OrderComponent
   },
+  { path: 'pay/:orderNum/:payMoney', component: PayComponent },
   {path:'**',component:Page404Component}
 ];
 

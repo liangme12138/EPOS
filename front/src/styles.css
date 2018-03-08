@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '../node_modules/element-angular/theme/index.css';
+
 /*==========样式重置===========*/
 
 html,
@@ -52,6 +53,22 @@ nav {
 
 a {
     text-decoration: none;
+}
+
+.el-button--primary {
+    width: 95% !important;
+}
+
+.el-radio__input {
+    width: 20px;
+    height: 50px;
+}
+
+.el-radio__input .el-radio__inner {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    text-align: right;
 }
 
 @font-face {

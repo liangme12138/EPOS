@@ -6,6 +6,7 @@ width: 100%;
 .publicMenus {
     display: flex;
     height: 100%;
+    background: #fff;
 }
 
 .publicMenus>li {

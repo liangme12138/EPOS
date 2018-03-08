@@ -83,11 +83,11 @@
     flex: 2;
 }
 
-.orders .order_bottom>span:nth-child(2) {
+/* .orders .order_bottom>span:nth-child(2) {
     flex: 1;
-}
+} */
 
-.orders .order_bottom>span:nth-child(3) {
+.orders .order_bottom>span:nth-child(2) {
     flex: .7;
     border: 1px solid #F36653;
     margin: 10px 5px;
