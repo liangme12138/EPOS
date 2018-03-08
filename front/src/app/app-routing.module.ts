@@ -54,6 +54,7 @@ const routes: Routes = [
       {path:'nouse',component:NouseComponent},
       {path:'timeout',component:TimeoutComponent}
     ]
+  },
   {
     path: 'order', component: OrderComponent
   },

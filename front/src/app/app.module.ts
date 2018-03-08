@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpService} from '../utils/ajax'
-// import { ElModule } from 'element-angular'
+import { HttpService} from '../utils/ajax';
+import { ElModule } from 'element-angular';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocalStorage } from '../utils/local.storage';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -63,7 +64,7 @@ import { TimeoutComponent } from './timeout/timeout.component';
     ElModule.forRoot(),
     // WeUiModule.forRoot()
   ],
-  providers: [HttpService],
+  providers: [HttpService, LocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   private telInfo:Array<any>;
   constructor(private routeInfo: ActivatedRoute, private http: HttpService, private router: Router) { }
   
+  
   ngOnInit() {
+
     
   }
   toLogin() {
@@ -38,14 +40,17 @@ export class LoginComponent implements OnInit {
         } else if (res === 'loginsuccess'){
           this.arrInfo.push(telVal);
           this.arrInfo.push(pwdVal);
-          var str = JSON.stringify(this.arrInfo);
+          // var str = JSON.stringify(this.arrInfo);
           window.localStorage.setItem('telInfo',telVal);
-          console.log(this.telInfo,'6666')
-          // this.router.navigate(['/home/menus'])
+          // console.log(this.telInfo,'6666')
+          this.router.navigate(['/home/menus'])
         }
       })
     }
   }
+
+
+  
   telBtn(){
     var telVal = this.tel;
     var telReg = /^[1][3,4,5,7,8][0-9]{9}$/;
