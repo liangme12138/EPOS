@@ -51,4 +51,11 @@ export class OrderComponent implements OnInit {
     Again(){
         this.router.navigate(['/home/menus'])
     }
+    delOrder(orderId){
+        console.log(orderId);
+        this.http.post('order.php', { state: 'delOrder', userPhone: this.userPhone, orderId: orderId }).then((res) => {
+            console.log(res);
+            this.getOrder('getOrder')
+        })
+    }
 }

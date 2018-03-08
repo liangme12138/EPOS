@@ -71,6 +71,16 @@ a {
     text-align: right;
 }
 
+.el-radio__input {
+    width: 20px;
+    height: 50px;
+    cursor: not-allowed;
+}
+
+.el-radio {
+    cursor: not-allowed;
+}
+
 @font-face {
     font-family: "iconfont";
     src: url('./font/iconfont.eot?t=1520071051350');
