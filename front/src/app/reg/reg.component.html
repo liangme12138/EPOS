@@ -9,6 +9,7 @@
   <div class="lg-body">
     <el-input [(ngModel)]="tel" placeholder="请输入手机号" (blur)="telReg()" icon="edit"></el-input>
     <el-input native-type="password" [(ngModel)]="pwd" placeholder="设置登录密码，不少于6位" (blur)="pwdReg()" icon="edit"></el-input>
+    <el-input native-type="password" [(ngModel)]="pwdCon" placeholder="请重新输入密码" (blur)="pwdRegCon()" icon="edit"></el-input>
     <el-button type="primary" native-type="submit" icon="upload" [plain]="true" (click)="toReg('success')">注册</el-button>
     <br>
     <!-- <el-alert type="success" style="display:none">
