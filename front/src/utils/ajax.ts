@@ -41,7 +41,12 @@ export class HttpService{
                 })
             } ) ).toPromise().then( ( res ) =>
             {
-                resolve( res.json() )
+                // console.log(res)
+                if (res['_body'] == "{ state = True }"){
+
+                }else{
+                    resolve( res.json() )
+                }
             } )
         })
     }
