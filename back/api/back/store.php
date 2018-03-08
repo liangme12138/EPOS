@@ -40,34 +40,48 @@
         
     }else if($status == "update"){
         $arr1 = array();
-        // $arr2 = array();
+        $arr2 = array();
         $data = object2array(json_decode($data));
-        foreach ($data as $key => $value) {       
-                array_push($arr1,$key."='". $value."' ,");
+        foreach ($data as $key => $value) { 
+            if($key == "Like"){
+                array_push($arr2,"'".$key."'='".$value."'and");
+            }
+            else{
+                array_push($arr2,$key."='".$value."'and");
+            }      
+            array_push($arr1,$key."='". $value."' ,");
             # code...
         }
         $strings = substr(implode(" ",$arr1),0,-2);
-        // var_dump($data);
-        $sql = "UPDATE $table SET $strings WHERE goodsId = $data[goodsId]";
-        // var_dump($sql);
-        $result = excute_oop($sql);
+        $strings2 = substr(implode(" ",$arr2),0,-3);
+        $sql="select * from $table where $strings2";
+        $result=query_oop($sql);
+        // var_dump($result);
         if($result){
-             $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table";
-            if($state == "search"){
-                $sql .= " where goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%'";
-            }
-            if($page && $pageitems){
-                $no=($page-1)*$pageitems;
-                $sql .= " limit $no,$pageitems";
-            }
-            $sql .= ";select found_rows() as colsCount;";     
-            $result = multi_query_oop($sql);
-            echo json_encode($result, JSON_UNESCAPED_UNICODE);
-        }else{
             echo "fail";
+        }else{
+            // var_dump($data);
+            $sql = "UPDATE $table SET $strings WHERE goodsId = $data[goodsId]";
+            // var_dump($sql);
+            $result = excute_oop($sql);
+            if($result){
+                 $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table";
+                if($state == "search"){
+                    $sql .= " where goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%'";
+                }
+                if($page && $pageitems){
+                    $no=($page-1)*$pageitems;
+                    $sql .= " limit $no,$pageitems";
+                }
+                $sql .= ";select found_rows() as colsCount;";     
+                $result = multi_query_oop($sql);
+                echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            }else{
+                echo "fail";
+            }
+            
+            // var_dump($sql);
         }
-        
-        // var_dump($sql);
     }else if($status == "add"){
         $string="CategoryName";//查询对应某元素的值 
         $datas =json_decode($data);
@@ -77,42 +91,50 @@
         // $onlyValue=array2object($result1[0])->CategoryId;
         $arr1 = array();
         $arr2 = array();
+        $arr3=array();
         $data=object2array($datas);
         foreach ($data as $key => $value) {
             if($key == "Like"){
                 array_push($arr1,"`".$key."` ,");
                 array_push($arr2,"'".$value."' ,");
+                array_push($arr3,"'".$key."'='".$value."'and");
             }
-            // else if($key=="CategoryName"){
-            //     array_push($arr1,"Category ,");
-            //     array_push($arr2,"'". $onlyValue."' ,");
-            // }
             else{
                 array_push($arr1,$key." ,");
                 array_push($arr2,"'".$value."' ,");
+                array_push($arr3,$key."='".$value."'and");
             }
             
         }
         $strings1 = substr(implode(" ",$arr1),0,-2);
         $strings2 = substr(implode(" ",$arr2),0,-2);
-        $sql = "INSERT INTO $table ($strings1) VALUES ($strings2)"; 
-        // var_dump($sql);
-        $result = excute_oop($sql);
+        $strings3 = substr(implode(" ",$arr3),0,-3);
+        // var_dump($strings3);
+        $sql="select * from $table where $strings3";
+        $result=query_oop($sql);
+        // var_dump($result);
         if($result){
-            $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table";
-            if($state == "search"){
-                $sql .= " where goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%'";
-            }
-            if($page && $pageitems){
-                $no=($page-1)*$pageitems;
-                $sql .= " limit $no,$pageitems";
-            }
-            $sql .= ";select found_rows() as colsCount;";   
-            
-            $result = multi_query_oop($sql);
-            echo json_encode($result, JSON_UNESCAPED_UNICODE);
-        }else{
             echo "fail";
+        }else{
+                $sql = "INSERT INTO $table ($strings1) VALUES ($strings2)"; 
+                // var_dump($sql);
+                $result = excute_oop($sql);
+                if($result){
+                    $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table";
+                    if($state == "search"){
+                        $sql .= " where goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%'";
+                    }
+                    if($page && $pageitems){
+                        $no=($page-1)*$pageitems;
+                        $sql .= " limit $no,$pageitems";
+                    }
+                    $sql .= ";select found_rows() as colsCount;";   
+                    
+                    $result = multi_query_oop($sql);
+                    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+                }else{
+                    echo "fail";
+                }
         }
     }else{
          $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table";
@@ -126,6 +148,7 @@
         $sql .= ";select found_rows() as colsCount;";    
 
         $result = multi_query_oop($sql);
+        // var_dump($result);
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }
 

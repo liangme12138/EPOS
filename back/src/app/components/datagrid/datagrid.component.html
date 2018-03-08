@@ -17,6 +17,7 @@
         </ng-template>
         <ng-template #modalContent>
             <dataform [api]="searchConfig.api" [objs]="objData" #objs1></dataform>
+            <span style="color:red;" *ngIf="errorTip">该数据已存在！</span>
         </ng-template>
         <ng-template #modalFooter>
             <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel($event)">

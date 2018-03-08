@@ -1,6 +1,7 @@
 import { Component, OnInit,Input,Output} from '@angular/core';
 import {HttpService} from '../../utils/ajax'
 import {CommonService} from '../../utils/common.service'
+
 @Component({
   selector: 'dataform',
   templateUrl: './dataform.component.html',
@@ -15,9 +16,13 @@ export class DataformComponent implements OnInit {
   colsAttributes:Object={};
   selectApiDataset:Object={};
 
-  constructor(private http: HttpService, private common: CommonService) { }
+  constructor( private http: HttpService, private common: CommonService) { }
+
+  
 
   ngOnInit() {
+    
+
     this.http.get(this.api).then((configRes)=>{
       
       this.colsConfig = configRes['cols'].split(',');
