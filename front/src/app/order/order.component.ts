@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-    userPhone: string = '1111';
+    userPhone: string = window.localStorage.getItem('telInfo');
     orderItem:any;
     orders: any;
     totle:number;
@@ -46,6 +46,16 @@ export class OrderComponent implements OnInit {
             }
         })
         console.log(this.foodPrice)
-        this.router.navigate(['/confirmorder', { orderId: orderId, price: this.foodPrice}])
+        this.router.navigate(['/pay', orderId,this.foodPrice])
+    }
+    Again(){
+        this.router.navigate(['/home/menus'])
+    }
+    delOrder(orderId){
+        console.log(orderId);
+        this.http.post('order.php', { state: 'delOrder', userPhone: this.userPhone, orderId: orderId }).then((res) => {
+            console.log(res);
+            this.getOrder('getOrder')
+        })
     }
 }

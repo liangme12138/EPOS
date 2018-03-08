@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 import { ElModule } from 'element-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpService} from '../utils/ajax'
-// import { ElModule } from 'element-angular'
+import { HttpService} from '../utils/ajax';
 import { AppRoutingModule } from './app-routing.module';
-// import { ElModule } from 'element-angular'
-// import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocalStorage } from '../utils/local.storage';
+
 
 
 import { AppComponent } from './app.component';
@@ -28,8 +27,12 @@ import { PublicMenusComponent } from './public-menus/public-menus.component';
 import { HotSalesPipe } from '../pipe/hot-sales.pipe';
 import { QuickLoginComponent } from './quick-login/quick-login.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { CenterComponent } from './center/center.component';
+import { DiscountComponent } from './discount/discount.component';
+import { UsedComponent } from './used/used.component';
+import { NouseComponent } from './nouse/nouse.component';
+import { TimeoutComponent } from './timeout/timeout.component';
 import { PayComponent } from './pay/pay.component';
-
 
 @NgModule({
   declarations: [
@@ -50,18 +53,23 @@ import { PayComponent } from './pay/pay.component';
     HotSalesPipe,
     QuickLoginComponent,
     ConfirmOrderComponent,
+    CenterComponent,
+    DiscountComponent,
+    UsedComponent,
+    NouseComponent,
+    TimeoutComponent, 
     PayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     ElModule.forRoot(),
-    BrowserAnimationsModule
     // WeUiModule.forRoot()
+    HttpModule, 
+    BrowserAnimationsModule,
   ],
-  providers: [HttpService],
-  bootstrap: [AppComponent]
+  providers: [HttpService, LocalStorage],
+  bootstrap:[AppComponent]
 })
 export class AppModule { }

@@ -12,17 +12,28 @@
             </ul>
         </header>
     </ng-template>
-    <div class="orders" *ngFor="let obj of orders">
-        <h4 class="order_top"><p><i class="icon-dingdan iconfont"></i><span>{{filterData(obj.addTime)}}</span></p><p><span *ngIf="obj.status == 0">待付款</span><span *ngIf="obj.status == 1">已完成</span></p></h4>
-        <ul>
-            <ng-template ngFor let-objItem [ngForOf]="orderItem">
-            <li *ngIf="obj.orderId ==objItem.orderId"><span>{{objItem.foodName}}</span><span>￥{{objItem.price}}</span></li>
-            </ng-template>
-        </ul>
-        <!-- <h3></h3> -->
-        <h4 class="order_bottom"><span>订单号：{{obj.orderId}}</span><span></span><span><span *ngIf="obj.status == 1">再来一单</span><span *ngIf="obj.status == 0" (click)="toPayment(obj.orderId)">去付款</span></span></h4>
+    <div class="all">
+        <div class="orders" *ngFor="let obj of orders">
+            <h4 class="order_top"><p><i class="icon-dingdan iconfont"></i><span>{{filterData(obj.addTime)}}</span></p><p><span *ngIf="obj.status == 0">待付款</span><span *ngIf="obj.status == 1">已完成</span></p></h4>
+            <ul>
+                <ng-template ngFor let-objItem [ngForOf]="orderItem">
+                <li *ngIf="obj.orderId ==objItem.orderId"><span>{{objItem.foodName}}</span><span>￥{{objItem.price}}</span></li>
+                </ng-template>
+            </ul>
+            <!-- <h3></h3> -->
+            <h4 class="order_bottom">
+                <span>订单号：{{obj.orderId}}</span>
+                <span>
+                
+                    <span *ngIf="obj.status == 1" (click)="Again(obj.orderId)">再来一单</span>
+                    <span *ngIf="obj.status == 0" (click)="toPayment(obj.orderId)">去付款</span>
+                </span>
+                <i *ngIf="obj.status == 1" class="el-icon-delete" (click)="delOrder(obj.orderId)" ></i>
+            </h4>
+        </div>
     </div>
  <footer *ngIf="routerState == false" class="orderFooter">
     <app-public-menus></app-public-menus>
  </footer>
 </div>
+    

@@ -1,6 +1,6 @@
 <div id="home">
     <header>
-        <app-header Title="阿婆私房菜" Back="product"></app-header>
+        <app-header Title="阿婆私房菜" ></app-header>
     </header>
     <div class="body"> 
         <ul class="nav">
@@ -11,7 +11,9 @@
                 <a routerLink="order">订单</a>
             </li>
         </ul>
-      
+        <el-alert type="error" [show-icon]="true" style="display:none" class="nono">
+            暂未登录，为你跳转中ing.....
+        </el-alert>
         <div class="container">
           <router-outlet></router-outlet>
         </div>

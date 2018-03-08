@@ -1,19 +1,26 @@
 <div class="reg">
   <div class="lg-top">
-    <i class="iconfont icon-fanhui back"></i>
+    <i class="iconfont icon-fanhui back" (click)="backLogin()"></i>
     <h2>手机号注册</h2>
   </div>
+    <el-alert type="error" style="display:none" class="ero">
+      {{errorInfo}}
+    </el-alert>
   <div class="img">
     <img src="http://via.placeholder.com/375x200" alt="">
   </div>
   <div class="lg-body">
     <el-input [(ngModel)]="tel" placeholder="请输入手机号" (blur)="telReg()" icon="edit"></el-input>
+    <div class="kong"></div>
+    
     <el-input native-type="password" [(ngModel)]="pwd" placeholder="设置登录密码，不少于6位" (blur)="pwdReg()" icon="edit"></el-input>
+    <div class="kong"></div>
+    
+    <el-input native-type="password" [(ngModel)]="pwdCon" placeholder="请重新输入密码" (blur)="pwdRegCon()" icon="edit"></el-input>
+    <div class="kong"></div>
+    
     <el-button type="primary" native-type="submit" icon="upload" [plain]="true" (click)="toReg('success')">注册</el-button>
     <br>
-    <!-- <el-alert type="success" style="display:none">
-      注册成功!
-    </el-alert> -->
   </div>
 
 </div>

@@ -1,7 +1,10 @@
 <div class="pay">
 	<header>
-		<app-header Title="在线支付" Back="product"></app-header>
+		<app-header Title="在线支付" Back="order"></app-header>
 	</header>
+	<el-alert type="error" [show-icon]="true" style="display:none" class="nono">
+		暂未登录，为你跳转中ing.....
+	</el-alert>
 	<div>
 		<h3>阿婆私房菜</h3>
 		<p>正在耐心等待您付款！</p>
@@ -11,8 +14,8 @@
 	<div class="payStyle">
 		<p>付款方式：</p>
 		<el-radio-group [model]="'3'">
-			<el-radio label="3"><img src="../../assets/zhifubao.jpg"/></el-radio>
-			<el-radio label="6"><img src="../../assets/weixin.jpg"/></el-radio>
+			<el-radio label="3"><img src="../../assets/zhifubao.jpg" alt="" srcset=""></el-radio>
+			<el-radio label="6"><img src="../../assets/weixin.jpg" alt="" srcset=""></el-radio>
 		</el-radio-group>
 	</div>
 	<div class="pay_box" #card>
@@ -24,7 +27,7 @@
 			<span>亲，是否确认支付？</span>
 			<ng-template #footer>
 				<el-button (click)="card.toggle2 = false" (click)="affirm()">确认</el-button>
-				<el-button (click)="card.toggle2 = false">取消</el-button>
+				<el-button (click)="card.toggle2 = false" (click)="cancel()">取消</el-button>
 			</ng-template>
 		</el-dialog>
 	</div>
