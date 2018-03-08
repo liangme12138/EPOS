@@ -1,3 +1,16 @@
+order_body {
+    display: flex;
+}
+
+.order_body>header {
+    /* padding-bottom: 50px; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    /* border-tops: 1px solid #ccc; */
+}
+
 .order_body .orderBanner {
     width: 100%;
     /* height: 150px; */
@@ -8,6 +21,14 @@
 .order_body .orderBanner>img {
     display: block;
     width: 100%;
+}
+
+.all {
+    overflow-x: hidden;
+    padding-top: 91px;
+    /* height: 100%; */
+    flex: 1;
+    padding-bottom: 60px;
 }
 
 .orders {
@@ -83,6 +104,7 @@
     flex: 2;
 }
 
+
 /* .orders .order_bottom>span:nth-child(2) {
     flex: 1;
 } */
@@ -98,6 +120,10 @@
     text-align: center;
 }
 
+.el-icon-delete {
+    line-height: 40px;
+}
+
 .orderFooter {
     position: fixed;
     bottom: 0;
@@ -105,12 +131,13 @@
     border-top: 1px solid #ccc;
 }
 
-.ordersTab{
+.ordersTab {
     display: flex;
     height: 40px;
     line-height: 40px;
-    border-bottom:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
-.ordersTab>li{
+
+.ordersTab>li {
     flex: 1;
 }

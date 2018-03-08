@@ -49,6 +49,22 @@
         // $result=multi_query_oop($sql);
         // $result = query_oop($sql);
         $result = excute_oop($sql);
-        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        if($result){
+            $sql = "SELECT * from `order`,orderfoods,foods WHERE `order`.userPhone = '$userPhone' and `order`.orderId= '$orderId' and `order`.orderId = orderfoods.orderId and foods.foodId = orderfoods.foodId;";
+            $result=multi_query_oop($sql);
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        }
+       
+    }  else if ($state == 'delOrder'){
+        $sql = "delete from orderfoods where orderId = '$orderId'";
+        $sql.=";delete from `order` where userPhone = '$userPhone' and orderId = '$orderId';";
+        $result=multi_query_oop($sql);
+        $endRes = '"fail"';
+            foreach ($result as $key => $value) {  
+                if(count($value) == 0){
+                    $endRes = '"ok"';
+                }
+            }  
+        echo $endRes;
     } 
 ?>
