@@ -9,7 +9,7 @@ import { ElMessageService } from 'element-angular';
 })
 export class CenterComponent implements OnInit {
 
-  private userInfo:string;
+  private userInfo: string = window.localStorage.getItem('telInfo');
   constructor(
     private router: Router, 
     private routeInfo: ActivatedRoute, 
@@ -18,7 +18,7 @@ export class CenterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.userInfo = window.localStorage.getItem('telInfo');
+   
     // console.log(this.userInfo,'8888')
     if (!this.userInfo) {
       this.userInfo = '吃货留步，请登录'
@@ -44,6 +44,14 @@ export class CenterComponent implements OnInit {
   //     confirm('确定退出吗？')
   //   }
   // }
+  handleBack(){
+    console.log(this.userInfo)
+    if (this.userInfo =='吃货留步，请登录'){
+      this.router.navigate(['/login'])
+    }else{
+      return false;
+    }
+  }
   
 
 }

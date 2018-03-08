@@ -78,10 +78,10 @@ export class LoginComponent implements OnInit {
       this.errorInfo = '手机号输入有误!';
       document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
       setTimeout(() => {
-        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none')
       }, 2000);
       // alert('手机号输入有误!')
-      return false;
+      // return false;
     }
   }
   pwdBtn(){
@@ -89,5 +89,8 @@ export class LoginComponent implements OnInit {
     if(!pwdVal){
       return false;
     }
+  }
+  toCenter(){
+    this.router.navigate(['/center'])
   }
 }

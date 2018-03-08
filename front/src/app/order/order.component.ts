@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-    userPhone: string = '1111';
+    userPhone: string = window.localStorage.getItem('telInfo');
     orderItem:any;
     orders: any;
     totle:number;

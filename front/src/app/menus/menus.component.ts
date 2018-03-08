@@ -21,7 +21,7 @@ export class MenusComponent implements OnInit {
     qtyId:any=[];
     count:any;
     counts:any = [];
-    userPhone:string = '1111';
+    userPhone: string = window.localStorage.getItem('telInfo');
     qtyRes: Object;
     private userInfo: string;
     
@@ -71,7 +71,7 @@ export class MenusComponent implements OnInit {
       
     }
     addQty(foodId,price){
-        if (!this.userInfo) {
+        if (!this.userPhone) {
             document.getElementsByClassName('nono')[0].setAttribute('style', 'display:block');
             setTimeout(() => {
                 this.router.navigate(['/login'])
@@ -96,7 +96,7 @@ export class MenusComponent implements OnInit {
     }
     subQty(foodId, price) {
         // this.qtys--;
-        if (!this.userInfo) {
+        if (!this.userPhone) {
             document.getElementsByClassName('nono')[0].setAttribute('style', 'display:block');
             setTimeout(() => {
                 this.router.navigate(['/login'])

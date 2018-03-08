@@ -10,7 +10,7 @@ import { ElMessageService } from 'element-angular'
 export class HomeComponent implements OnInit {
 
     store: Object = global;
-    private userInfo:string;
+    private userInfo: string = window.localStorage.getItem('telInfo');
     constructor(private routeInfo: ActivatedRoute, private router: Router, private message: ElMessageService) { }
 
     ngOnInit() {

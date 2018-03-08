@@ -9,7 +9,7 @@ import { Router, ActivatedRoute, ParamMap, Params} from '@angular/router';
     styleUrls: ['./confirm-order.component.css']
 })
 export class ConfirmOrderComponent implements OnInit {
-    userPhone: string = '1111';
+    userPhone: string = window.localStorage.getItem('telInfo');
     orderData:any;
     private orderInfo:any;
     foodsId:any=[];
@@ -38,7 +38,7 @@ export class ConfirmOrderComponent implements OnInit {
     affirm(){
         var timestamp = new Date().getTime();
         console.log(this.foodsId, this.counts)
-        // console.log(timestamp);
+        console.log(this.userPhone);
         
         this.http.post('order.php', { state: 'addOrder', userPhone: this.userPhone, orderId: timestamp, foodsId: this.foodsId, counts: this.counts}).then((res) => {
             // console.log(res);
