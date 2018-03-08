@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
 import { MenusComponent } from './menus/menus.component'
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+
 import { CenterComponent } from './center/center.component';
 import { DiscountComponent } from './discount/discount.component';
 import { UsedComponent } from './used/used.component';
@@ -47,6 +49,9 @@ const routes: Routes = [
   {path:'reg',component:RegComponent},
   { path:'menus', component: MenusComponent},
   {path:'quickLogin',component:QuickLoginComponent},
+  {path: 'order', component: OrderComponent},
+  { path: 'confirmorder', component: ConfirmOrderComponent },
+  // { path: 'confirmorder/:orderId/:price', component: ConfirmOrderComponent },
   {path:'center',component:CenterComponent},
   {path: 'discount', component: DiscountComponent,
     children: [

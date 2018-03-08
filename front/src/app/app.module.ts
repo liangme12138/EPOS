@@ -7,6 +7,10 @@ import { ElModule } from 'element-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalStorage } from '../utils/local.storage';
+// import { ElModule } from 'element-angular'
+// import { AppRoutingModule } from './app-routing.module';
+
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +28,7 @@ import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
 import { HotSalesPipe } from '../pipe/hot-sales.pipe';
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CenterComponent } from './center/center.component';
 import { DiscountComponent } from './discount/discount.component';
 import { UsedComponent } from './used/used.component';
@@ -49,6 +54,7 @@ import { TimeoutComponent } from './timeout/timeout.component';
     PublicMenusComponent,
     HotSalesPipe,
     QuickLoginComponent,
+    ConfirmOrderComponent,
     CenterComponent,
     DiscountComponent,
     UsedComponent,
