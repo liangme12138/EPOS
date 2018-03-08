@@ -15,6 +15,7 @@ import { MenusComponent } from './menus/menus.component'
 import { QuickLoginComponent } from './quick-login/quick-login.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { PayComponent } from './pay/pay.component';
+
 import { CenterComponent } from './center/center.component';
 import { DiscountComponent } from './discount/discount.component';
 import { UsedComponent } from './used/used.component';
@@ -23,7 +24,6 @@ import { TimeoutComponent } from './timeout/timeout.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home/menus',pathMatch:'full'},
-  { path:'discount',redirectTo:'/discount/nouse',pathMatch:'full'},
   {path:'home',component:HomeComponent,
     children: [
       {
@@ -45,6 +45,7 @@ const routes: Routes = [
   //   ]
   // },
   {path:'details',component:DetailsComponent},
+  {path:'pay/:orderNum/:payMoney',component:PayComponent},
   {path:'cart/:id',component:CartComponent},
   {path:'login',component:LoginComponent},
   {path:'reg',component:RegComponent},

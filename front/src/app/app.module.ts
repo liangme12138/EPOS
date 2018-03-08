@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ElModule } from 'element-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax';
-import { ElModule } from 'element-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalStorage } from '../utils/local.storage';
+
 
 
 import { AppComponent } from './app.component';
@@ -63,11 +64,12 @@ import { PayComponent } from './pay/pay.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ElModule.forRoot(),
+    // WeUiModule.forRoot()
     HttpModule, 
     BrowserAnimationsModule,
-    ElModule.forRoot()
   ],
   providers: [HttpService, LocalStorage],
-  bootstrap: [AppComponent]
+  bootstrap:[AppComponent]
 })
 export class AppModule { }

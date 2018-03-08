@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { HttpService } from '../../utils/ajax';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -64,6 +65,7 @@ export class LoginComponent implements OnInit {
         }
       })
     }
+    
   }
 
 

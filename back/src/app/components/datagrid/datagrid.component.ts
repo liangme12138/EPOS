@@ -152,6 +152,7 @@ export class DataGridComponent implements OnInit, DoCheck{
                     this.showDisabled = true;
                     this.errorTip = false;
                 }
+                this.currentTrArray = [];
             } )
 
         }, 1000);
@@ -268,6 +269,7 @@ export class DataGridComponent implements OnInit, DoCheck{
             this.errorTip = false;
             this.isConfirmLoading = false;
             this.objData = {};
+            this.currentTrArray=[];
         })
     }
 
