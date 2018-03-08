@@ -8,10 +8,13 @@
   </div>
   <div class="lg-body">
     <el-input [(ngModel)]="tel" placeholder="请输入手机号" (blur)="telBtn()"></el-input>
+    <div class="kong"></div>
     <el-input native-type="password" [(ngModel)]="pwd" placeholder="请输入密码" (blur)="pwdBtn()"></el-input>
-    <el-button type="primary" native-type="submit" [plain]="true" icon="upload" (click)="toLogin(type)">登录</el-button>
     <br>
-    <a [routerLink]="['/quickLogin']">手机快捷登陆</a>
+    <div class="kong"></div>
+    <el-button type="primary" native-type="submit" [plain]="true" icon="upload" (click)="toLogin(type)" class="btn">登录</el-button>
+    <br>
+    <a [routerLink]="['/reg']" style="color:#ccc">还没账号?那就注册吧</a>
   </div>
 </div>
 

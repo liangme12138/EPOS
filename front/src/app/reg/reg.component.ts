@@ -64,8 +64,9 @@ export class RegComponent implements OnInit {
   toReg(){
     var telVal = this.tel;
     var pwdVal = this.pwd;
-    if (!telVal || !pwdVal) {
-      console.log('注册信息有误！')
+    var pwdConVal = this.pwdCon;
+    if (!telVal || !pwdVal || !pwdConVal) {
+      alert('注册信息有误')
       return false;
     } else {
       this.http.get('reg1.php', {
@@ -85,6 +86,9 @@ export class RegComponent implements OnInit {
     }
     // console.log(666)
     
+  }
+  backLogin(){
+    this.router.navigate(['/login'])
   }
 
 }

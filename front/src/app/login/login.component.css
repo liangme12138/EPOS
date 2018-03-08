@@ -32,10 +32,13 @@ h2{
 .lg-body{
     padding: 20px;
 }
-.lg-body .el-input__inner {
-    display: block;
-    margin-bottom: 20px;
+.kong{
+    height: 20px;
 }
-.el-button{
+.el-input__inner {
+    display: block;
+    margin-top: 20px;
+}
+.el-button--primary.is-plain {
     width: 280px;
 }

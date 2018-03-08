@@ -28,11 +28,22 @@ export class CenterComponent implements OnInit {
     this.router.navigate(['discount'])
   }
   handle(type: string): void {
-    this.message[type]('成功退出账户');
-    window.localStorage.clear();
-    this.userInfo = '吃货留步，请登录'
-    
+    if (this.userInfo === '吃货留步，请登录'){
+      this.message[type]('请先登录，好吗？');
+    }else{
+      window.localStorage.clear();
+      this.message['success']('退出成功，下次再来!');
+      this.userInfo = '吃货留步，请登录';
+    }
   }
+  // handle(){
+  //   if (!this.userInfo){
+  //     // confirm('确定退出吗？')
+  //     return false;
+  //   }else{
+  //     confirm('确定退出吗？')
+  //   }
+  // }
   
 
 }

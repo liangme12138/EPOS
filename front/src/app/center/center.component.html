@@ -23,6 +23,9 @@
       </li>
     </ul>
   </div>
+  <el-button [plain]="true" (click)="handle('info','success')">退出账户</el-button>
+  <!-- <el-button [plain]="true" (click)="handle()">退出账户</el-button> -->
+  
   <div class="ct-bt"> 
     <el-collapse [model]="[1]">
       <el-collapse-item label="关于我们" value="1">
@@ -33,20 +36,21 @@
         </ng-template>
     
         <div>吃最好的餐，点最方便的餐</div>
-        <!-- <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div> -->
+        <div>阿婆私房菜贯彻简洁，以易用性为主的设计理念。让进店点餐的顾客无论是大人还是小孩乃至老人，都能够顺利、迅速地完成微信点餐，享用美食。</div>
+        <div> 无论是围餐的先食后付，或简餐的先付后食，我们都支持顾客微信支付宝买单。对于顾客省去了排队等待的时间。对店里减轻了收银压力、提升了翻台效率。</div>
       </el-collapse-item>
       <el-collapse-item label="意见反馈" value="2">
-        <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
-        <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+        <div>广州阿婆私房菜食品网络技术有限公司</div>
+        <div>电话：020 38493455</div>
+        <div>QQ：3160462157</div>
+        <div>邮箱：mkt@sz8.cn</div>
+        <div>地址：广州市天河区智汇兆联创意产业园E栋5楼501房</div>
       </el-collapse-item>
       <el-collapse-item label="设置" value="3">
-        <div>简化流程：设计简洁直观的操作流程；</div>
-        <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
-        <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
+        <div>简维护中,敬请期待ing......</div>
       </el-collapse-item>
     </el-collapse>    
   </div>
-  <el-button [plain]="true" (click)="handle('success')">退出账户</el-button>  
   <div class="footer">
     <app-public-menus></app-public-menus>
   </div>    
