@@ -33,7 +33,7 @@ import { DiscountComponent } from './discount/discount.component';
 import { UsedComponent } from './used/used.component';
 import { NouseComponent } from './nouse/nouse.component';
 import { TimeoutComponent } from './timeout/timeout.component';
-
+import { PayComponent } from './pay/pay.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,8 @@ import { TimeoutComponent } from './timeout/timeout.component';
     DiscountComponent,
     UsedComponent,
     NouseComponent,
-    TimeoutComponent
+    TimeoutComponent, 
+    PayComponent
   ],
   imports: [
     BrowserModule,

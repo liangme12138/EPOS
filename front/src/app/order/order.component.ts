@@ -46,7 +46,7 @@ export class OrderComponent implements OnInit {
             }
         })
         console.log(this.foodPrice)
-        // this.router.navigate(['/confirmorder', orderId,this.foodPrice])
+        this.router.navigate(['/pay', orderId,this.foodPrice])
     }
     Again(){
         this.router.navigate(['/home/menus'])

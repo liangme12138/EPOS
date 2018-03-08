@@ -50,7 +50,7 @@
         }else{
             echo '"fail"';
         }
-    }else if($state == 'delCarItem'){
+    } else if($state == 'delCarItem'){
         $sql = "delete from car where userPhone = '$userPhone' and foodId ='$foodId'";
         $result = excute_oop($sql);
         if($result){
@@ -58,5 +58,13 @@
         }else{
             echo '"fail"';
         }
+    } else if ( $state == 'emptyCart') {
+      $sql = "delete from car where userPhone = '$userPhone'";
+      $result = excute_oop($sql);
+      if($result){
+        echo '"seccese"';
+      }else{
+        echo '"fail"';
+      }
     } 
 ?>
