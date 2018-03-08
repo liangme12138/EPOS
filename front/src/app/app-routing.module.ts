@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
 import { MenusComponent } from './menus/menus.component'
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo:'/home/menus',pathMatch:'full'},
@@ -41,9 +43,9 @@ const routes: Routes = [
   {path:'reg',component:RegComponent},
   { path:'menus', component: MenusComponent},
   {path:'quickLogin',component:QuickLoginComponent},
-  {
-    path: 'order', component: OrderComponent
-  },
+  {path: 'order', component: OrderComponent},
+  { path: 'confirmorder', component: ConfirmOrderComponent },
+  // { path: 'confirmorder/:orderId/:price', component: ConfirmOrderComponent },
   {path:'**',component:Page404Component}
 ];
 

@@ -24,6 +24,7 @@ export class MenusComponent implements OnInit {
     constructor(private http: HttpService) { }
 
     ngOnInit() {
+        
         this.http.get('menus.php', { state: 'getMenus'}).then((res) => {
             // console.log(res);
             this.menuType = res ;
@@ -34,6 +35,8 @@ export class MenusComponent implements OnInit {
                 console.log(res);
                 this.qtys = res;
                 // this.store['count'] = res['data2'][0]['row'];
+                this.store['count'] = 0;
+                this.store['TotalPrice'] = 0
                 this.qtys.forEach(item =>{
                     this.qtyId.push(item.foodId)
                     this.counts.push(item.count);

@@ -13,6 +13,7 @@ export class OrderComponent implements OnInit {
     orders: any;
     totle:number;
     routerState:boolean;
+    foodPrice:number=0;
     
     constructor(private http: HttpService, private route: ActivatedRoute, private router: Router) { }
 
@@ -22,7 +23,7 @@ export class OrderComponent implements OnInit {
         } else if (this.router.url =='/order'){
             this.routerState = false;
         }
-        console.log('router', this.router.url)
+        // console.log('router', this.router.url)
         this.getOrder('getOrder')
     }
     filterData(_val) {
@@ -31,9 +32,23 @@ export class OrderComponent implements OnInit {
     }
     getOrder(status){
         this.http.post('order.php', { state: status, userPhone: this.userPhone }).then((res) => {
-            // console.log(res);
+            console.log(res);
             this.orderItem = res['data1'];
             this.orders = res['data2'];
         })
+    }
+    toPayment(orderId){
+        
+        this.orderItem.forEach(item=>{
+            // console.log(orderId);
+            if (orderId == item.orderId){
+                this.foodPrice = (item.price * 1) + this.foodPrice;
+            }
+        })
+        console.log(this.foodPrice)
+        // this.router.navigate(['/confirmorder', orderId,this.foodPrice])
+    }
+    Again(){
+        this.router.navigate(['/home/menus'])
     }
 }

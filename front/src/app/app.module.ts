@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { HttpService} from '../utils/ajax'
 // import { ElModule } from 'element-angular'
 import { AppRoutingModule } from './app-routing.module';
+// import { ElModule } from 'element-angular'
+// import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +27,7 @@ import { OrderComponent } from './order/order.component';
 import { PublicMenusComponent } from './public-menus/public-menus.component';
 import { HotSalesPipe } from '../pipe/hot-sales.pipe';
 import { QuickLoginComponent } from './quick-login/quick-login.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 
 @NgModule({
@@ -43,7 +47,8 @@ import { QuickLoginComponent } from './quick-login/quick-login.component';
     OrderComponent,
     PublicMenusComponent,
     HotSalesPipe,
-    QuickLoginComponent
+    QuickLoginComponent,
+    ConfirmOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,7 @@ import { QuickLoginComponent } from './quick-login/quick-login.component';
     FormsModule,
     HttpModule,
     ElModule.forRoot(),
+    BrowserAnimationsModule
     // WeUiModule.forRoot()
   ],
   providers: [HttpService],
