@@ -1,0 +1,27 @@
+.payStyle img {
+    display: inline-block;
+    width:50px;
+    height:50px;
+    text-align: top;
+}
+.pay p{
+    display: block;
+    text-align: left;
+    margin:20px;
+}
+.pay h3{
+    margin:20px;
+    margin-bottom: 50px;
+}
+.pay_box{
+    margin-top:80px;
+}
+
+.payStyle>p{
+    float: left;
+    margin-right:0;
+}
+
+
+
+

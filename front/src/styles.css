@@ -143,3 +143,26 @@ a {
 .icon-youhuiquan:before {
     content: "\e612";
 }
+
+.el-button--primary {
+  width: 95% !important;
+}
+.el-radio__input .el-radio__inner{
+    width:20px;
+    height:20px;
+    margin-top:15px;
+    text-align: right;
+}
+.el-radio__input {
+    width:20px;
+    height:50px;
+    cursor: not-allowed;
+
+}
+.el-radio{
+    cursor : not-allowed;
+}
+
+
+
+

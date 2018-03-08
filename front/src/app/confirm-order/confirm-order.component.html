@@ -1,0 +1,48 @@
+<div class="confirmorder">
+    <header>
+        <app-header Title="确认订单" Back="/home/menus"></app-header>
+    </header>
+    <div class="body">
+        <p>阿婆私房菜</p>
+        <div *ngFor="let obj of orderData" class="orderData">
+            <div class="foodMenuImg">
+              <img src="../../assets/food1.png">
+            </div>
+            <div class="orderInfor">
+              <p>{{obj.foodName}}</p>
+              <div class="price"><h4>{{obj.price}}</h4><p>X{{obj.count}}</p></div>
+            </div>
+        </div>
+        <ul class="count">
+           <li>
+               <span>小计:</span>
+                <span style="text-align: right;padding-right: 30px;">￥{{store.totle}}</span>
+            </li>
+            <li>
+                <span>留言:</span>
+                <span><input type="text" placeholder="有什么想对商家说的？"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="confirm">
+        <div class="car_left">
+            总计:￥{{store.totle}}
+        </div>
+        <div class="price">共{{store.count1}}件商品</div>
+        <button class="checkBtn"  (click)="card.toggle2 = true">提交订单</button>
+    </div>
+</div>
+<div class="box-card" #card>
+    <!-- <el-button (click)="card.toggle2 = true">自定义尾部</el-button> -->
+    <el-dialog [(visible)]="card.toggle2">
+        <ng-template #title>
+            <span>确认订单</span>
+        </ng-template>
+        <p>共{{store.count1}}件商品</p>
+        <p> 总计:￥{{store.totle}}</p>
+        <ng-template #footer>
+            <el-button (click)="card.toggle2 = false" (click)="affirm()">确认</el-button>
+            <el-button (click)="card.toggle2 = false">取消</el-button>
+        </ng-template>
+    </el-dialog>
+</div>
