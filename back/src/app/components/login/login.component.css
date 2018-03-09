@@ -4,8 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('http://localhost:888/assets/back.jpg');
+    background-image: url('http://10.3.131.170:888/assets/back.jpg');
 
+    
+    
 
 }
 

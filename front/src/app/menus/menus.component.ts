@@ -38,7 +38,7 @@ export class MenusComponent implements OnInit {
         })
         if (this.userPhone) {
             this.http.post('car.php', { state: 'getCar', userPhone: this.userPhone }).then((res) => {
-                console.log(res);
+                // console.log(res);
                 this.qtys = res;
                 // this.store['count'] = res['data2'][0]['row'];
                 this.store['count'] = 0;
@@ -62,7 +62,7 @@ export class MenusComponent implements OnInit {
             })
         } else {
             this.http.get('menus.php', { state: 'getMenusId', menuID: eve}).then((res) => {
-                console.log(res);
+                // console.log(res);
                 this.menus = res;
                 this.hotMenus = [];
                 // this.store['TotalPrice'] = 
@@ -75,9 +75,9 @@ export class MenusComponent implements OnInit {
             document.getElementsByClassName('nono')[0].setAttribute('style', 'display:block');
             setTimeout(() => {
                 this.router.navigate(['/login'])
-            }, 3000);
+            }, 2000);
         }else{
-            console.log('price', price)
+            // console.log('price', price)
             this.http.post('car.php', { state: 'addQty', foodId: foodId, userPhone: this.userPhone}).then((res) => {
                 if (res == 'seccese'){
                     this.store['count']++;
@@ -100,7 +100,7 @@ export class MenusComponent implements OnInit {
             document.getElementsByClassName('nono')[0].setAttribute('style', 'display:block');
             setTimeout(() => {
                 this.router.navigate(['/login'])
-            }, 3000);
+            }, 2000);
         }else{
             this.http.post('car.php', { state: 'subQty', foodId: foodId, userPhone: this.userPhone }).then((res) => {
                 if (res == 'seccese') {

@@ -45,7 +45,7 @@ export class CenterComponent implements OnInit {
   //   }
   // }
   handleBack(){
-    console.log(this.userInfo)
+    // console.log(this.userInfo)
     if (this.userInfo =='吃货留步，请登录'){
       this.router.navigate(['/login'])
     }else{

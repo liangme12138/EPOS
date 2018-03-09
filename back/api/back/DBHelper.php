@@ -2,9 +2,9 @@
     function connect_oop() {
         // 配置参数
          $servername = 'localhost';
-         $password = '';
+        //  $password = '';
         // $servername = '10.3.132.77';
-        // $password = 'root';
+        $password = '';
         $username = 'root';
         $database = 'epos';
         header('Access-Control-Allow-Origin:*');

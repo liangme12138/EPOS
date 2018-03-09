@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
                 this.router.navigate(['/login'])
             }, 3000);  
         }else{
-            console.log(this.store['count'])
+            // console.log(this.store['count'])
             if (this.store['count'] < 1) {
                 this.handle2('error');
             } else {

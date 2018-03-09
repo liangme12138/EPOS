@@ -50,7 +50,7 @@
                 </nz-radio-group>
             </div>
         </div>
-        <div nz-form-item nz-row  *ngFor="let col of colsConfig">
+        <div nz-form-item nz-row  *ngFor="let col of colsConfig" class="d1">
             <div nz-form-label nz-col [nzSpan]="isHorizontal?4:false">
                 <label>{{privateDic[common.lanType] && privateDic[common.lanType][col] ? privateDic[common.lanType][col]:common.publicDic[common.lanType][col]||col
                     }}
@@ -83,7 +83,8 @@
                         <ng-template ngFor let-obj [ngForOf]="colsAttributes[col].data">
                             <nz-option [nzLabel]="obj['text']" [nzValue]="obj['text']" *ngIf="obj['text'] == colsAttributes[col].defaultvalue"
                                 selected></nz-option>
-                            <nz-option [nzLabel]="obj['text']" [nzValue]="obj['text']" *ngIf="obj['text'] != colsAttributes[col].defaultvalue"></nz-option>
+                            <nz-option [nzLabel]="obj['text']" [nzValue]="obj['text']" *ngIf="obj['text'] != colsAttributes[col].defaultvalue"
+                                selected></nz-option>
                         </ng-template>
                     </nz-select>
 
@@ -97,7 +98,7 @@
                     <nz-input *ngSwitchCase="'textarea'" [nzRows]="2" [nzType]="'textarea'" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]"  [nzSize]="'large'">
                     </nz-input>
                 </div>
-                <div *ngIf="!colsAttributes[col]">
+                <div *ngIf="!colsAttributes[col]" class="d2">
                     <nz-input [nzType]="'text'" [ngModelOptions]="{standalone: true}"  [(ngModel)]="objs[col]" [nzSize]="'large'">
                     </nz-input>
                     <!-- <input type="text" [(ngModel)]="objs[col]"> -->
