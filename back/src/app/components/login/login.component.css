@@ -4,9 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('http://10.3.132.76:8080/assets/back.jpg');
+    background-image: url('http://10.3.132.56:8080/assets/back.jpg');
+
+
     
-    
+
 
 }
 
@@ -26,3 +28,5 @@
 .login-form-button {
   width: 100%;
 }
+/* 10.3.131.175 */
+

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HttpService{
     constructor( private http: Http ) { }
-    private baseUrl: string = 'http://10.3.132.76:8080/front/';
+    private baseUrl: string = 'http://10.3.132.56:8080/front/';
     private getUrl(_url){
         if ( _url.startsWith('http')){
             return _url;
@@ -53,3 +53,4 @@ export class HttpService{
 
 }
 
+// 10.3.132.56

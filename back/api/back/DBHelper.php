@@ -3,7 +3,7 @@
         // 配置参数
         //  $servername = 'localhost';
         //  $password = '';
-        $servername = '10.3.132.77';
+        $servername = '10.3.132.57';
         $password = 'root';
         $username = 'root';
         $database = 'epos';
@@ -58,7 +58,7 @@ function multi_query_oop($sql) {
 }
 //初始化连接对象方法
 function connect() {
-    $servername = "10.3.132.77";
+    $servername = "10.3.132.57";
     $password = "root";
     //  $servername = 'localhost';
     // $password = '';
