@@ -1,7 +1,12 @@
 import { Component, OnInit,Input,Output} from '@angular/core';
 import {HttpService} from '../../utils/ajax'
 import {CommonService} from '../../utils/common.service'
-
+import
+{
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 @Component({
   selector: 'dataform',
   templateUrl: './dataform.component.html',
@@ -16,12 +21,19 @@ export class DataformComponent implements OnInit {
   colsAttributes:Object={};
   selectApiDataset:Object={};
 
-  constructor( private http: HttpService, private common: CommonService) { }
+  validateForm: FormGroup;
+
+  constructor( private http: HttpService, private common: CommonService,private fb: FormBuilder) { }
 
   
 
   ngOnInit() {
     
+    this.validateForm = this.fb.group( {
+      formLayout: ['horizontal'],
+      userName: [null, [Validators.required]],
+      password: [null, [Validators.required]]
+    } );
 
     this.http.get(this.api).then((configRes)=>{
       
@@ -40,6 +52,18 @@ export class DataformComponent implements OnInit {
     this.http.get("config/product.txt").then((configRes) => {
       this.privateDic = configRes['dictionary'] || {};//私有字典(要改的列名)
     })
+  }
+
+  submitForm ()
+  {
+    for ( const i in this.validateForm.controls ) {
+      this.validateForm.controls[i].markAsDirty();
+    }
+  }
+
+  get isHorizontal ()
+  {
+    return this.validateForm.controls['formLayout'] && this.validateForm.controls['formLayout'].value === 'horizontal';
   }
   
 }

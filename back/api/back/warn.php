@@ -17,7 +17,7 @@
     else{
          $sql = "select SQL_CALC_FOUND_ROWS goodsId,goodsName,goodsCategory,supplier,inventory,Units,purchasCost from $table where inventory<50";
         if($status == "search"){
-            $sql .= " and goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%'";
+            $sql .= " and (goodsName like '%$content%' or goodsCategory like '%$content%' or supplier like '%$content%' or inventory like '%$content%')";
             }
         if($page && $pageitems){
             $no=($page-1)*$pageitems;
