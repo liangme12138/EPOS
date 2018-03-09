@@ -43,7 +43,7 @@ export class HttpService{
             {
                 // console.log(res)
                 if (res['_body'] == "{ state = True }"){
-
+                
                 }else{
                     resolve( res.json() )
                 }
