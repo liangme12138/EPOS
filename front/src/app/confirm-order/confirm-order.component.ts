@@ -37,8 +37,8 @@ export class ConfirmOrderComponent implements OnInit {
     }
     affirm(){
         var timestamp = new Date().getTime();
-        console.log(this.foodsId, this.counts)
-        console.log(this.userPhone);
+        // console.log(this.foodsId, this.counts)
+        // console.log(this.userPhone);
         
         this.http.post('order.php', { state: 'addOrder', userPhone: this.userPhone, orderId: timestamp, foodsId: this.foodsId, counts: this.counts}).then((res) => {
             // console.log(res);

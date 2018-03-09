@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('http://localhost:888/assets/back.jpg');
+    background-image: url('http://localhost:8080/assets/back.jpg');
 
 
 }

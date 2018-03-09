@@ -27,7 +27,7 @@ export class RegComponent implements OnInit {
       this.errorInfo = '手机号输入有误!';
       document.getElementsByClassName('ero')[0].setAttribute('style', 'display:block');
       setTimeout(()=>{
-        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none');
+        document.getElementsByClassName('ero')[0].setAttribute('style', 'display:none')
       },2000);
       // return false;
     }else{

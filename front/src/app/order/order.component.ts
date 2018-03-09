@@ -32,7 +32,7 @@ export class OrderComponent implements OnInit {
     }
     getOrder(status){
         this.http.post('order.php', { state: status, userPhone: this.userPhone }).then((res) => {
-            console.log(res);
+            // console.log(res);
             this.orderItem = res['data1'];
             this.orders = res['data2'];
         })
@@ -45,7 +45,7 @@ export class OrderComponent implements OnInit {
                 this.foodPrice = (item.price * 1) + this.foodPrice;
             }
         })
-        console.log(this.foodPrice)
+        // console.log(this.foodPrice)
         this.router.navigate(['/pay', orderId,this.foodPrice])
     }
     Again(){
@@ -54,7 +54,7 @@ export class OrderComponent implements OnInit {
     delOrder(orderId){
         console.log(orderId);
         this.http.post('order.php', { state: 'delOrder', userPhone: this.userPhone, orderId: orderId }).then((res) => {
-            console.log(res);
+            // console.log(res);
             this.getOrder('getOrder')
         })
     }

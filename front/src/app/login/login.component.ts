@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         telVal:telVal,
         pwdVal: pwdVal
       }).then((res)=>{
-        console.log(res)
+        // console.log(res)
         if(res === 'fail'){
           // alert('用户不存在');
           this.errorInfo = '用户不存在!';
