@@ -1,4 +1,4 @@
-<div class="myForm">
+<!-- <div class="myForm">
         <div *ngFor="let col of colsConfig" class="d1">
             <label >{{privateDic[common.lanType] && privateDic[common.lanType][col] ? privateDic[common.lanType][col]:common.publicDic[common.lanType][col]||col
                 }}：
@@ -27,6 +27,83 @@
                 <input type="text" [(ngModel)]="objs[col]">
             </div>
         </div>
-    </div>
+    </div> -->
 
    
+
+    <form nz-form [nzLayout]="validateForm.controls?.formLayout?.value" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="isHorizontal?4:false">
+                <label>Form Layout</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="isHorizontal?14:false">
+                <nz-radio-group formControlName="formLayout">
+                    <label nz-radio-button [nzValue]="'horizontal'">
+                        <span>Horizontal</span>
+                    </label>
+                    <label nz-radio-button [nzValue]="'vertical'">
+                        <span>Vertical</span>
+                    </label>
+                    <label nz-radio-button [nzValue]="'inline'">
+                        <span>Inline</span>
+                    </label>
+                </nz-radio-group>
+            </div>
+        </div>
+        <div nz-form-item nz-row  *ngFor="let col of colsConfig" class="d1">
+            <div nz-form-label nz-col [nzSpan]="isHorizontal?4:false">
+                <label>{{privateDic[common.lanType] && privateDic[common.lanType][col] ? privateDic[common.lanType][col]:common.publicDic[common.lanType][col]||col
+                    }}
+                </label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="isHorizontal?14:false">
+                <div *ngIf="colsAttributes[col]" [ngSwitch]="colsAttributes[col].type" class="d2">
+                    <!-- <select *ngSwitchCase="'select-api'" [(ngModel)]="objs[col]">
+                        <ng-template ngFor let-obj [ngForOf]="selectApiDataset[col]">
+                            <option [value]="obj[colsAttributes[col].match.text]" *ngIf="obj[colsAttributes[col].match.text] == colsAttributes[col].defaultvalue"
+                                selected>{{obj[colsAttributes[col].match.text]}}</option>
+                            <option [value]="obj[colsAttributes[col].match.text]" *ngIf="obj[colsAttributes[col].match.text] != colsAttributes[col].defaultvalue">{{obj[colsAttributes[col].match.text]}}</option>
+                        </ng-template>
+                    </select> -->
+                    <nz-select *ngSwitchCase="'select-api'" [nzSize]="'large'" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]">
+                        <ng-template ngFor let-obj [ngForOf]="selectApiDataset[col]">
+                            <nz-option [nzLabel]="obj[colsAttributes[col].match.text]" [nzValue]="obj[colsAttributes[col].match.text]"  *ngIf="obj[colsAttributes[col].match.text] == colsAttributes[col].defaultvalue" selected></nz-option>
+                            <nz-option [nzLabel]="obj[colsAttributes[col].match.text]" [nzValue]="obj[colsAttributes[col].match.text]"  *ngIf="obj[colsAttributes[col].match.text] != colsAttributes[col].defaultvalue" selected></nz-option>
+                        </ng-template>
+                    </nz-select>
+
+                    <!-- <select *ngSwitchCase="'select'" [(ngModel)]="objs[col]">
+                        <ng-template ngFor let-obj [ngForOf]="colsAttributes[col].data">
+                            <option [value]="obj['text']" *ngIf="obj['text'] == colsAttributes[col].defaultvalue" selected>{{obj['text']}}</option>
+                            <option [value]="obj['text']" *ngIf="obj['text'] != colsAttributes[col].defaultvalue">{{obj['text']}}</option>
+                        </ng-template>
+                    </select> -->
+
+                    <nz-select *ngSwitchCase="'select'" [nzSize]="'large'" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]">
+                        <ng-template ngFor let-obj [ngForOf]="colsAttributes[col].data">
+                            <nz-option [nzLabel]="obj['text']" [nzValue]="obj['text']" *ngIf="obj['text'] == colsAttributes[col].defaultvalue"
+                                selected></nz-option>
+                            <nz-option [nzLabel]="obj['text']" [nzValue]="obj['text']" *ngIf="obj['text'] != colsAttributes[col].defaultvalue"
+                                selected></nz-option>
+                        </ng-template>
+                    </nz-select>
+
+                    <!-- <input type="tel" *ngSwitchCase="'tel'" maxlength="11" minlength="11" [(ngModel)]="objs[col]"> -->
+                    <nz-input [nzType]="'tel'" *ngSwitchCase="'tel'"  maxlength="11" minlength="11" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]" [nzSize]="'large'">
+                    </nz-input>
+                    <!-- <input type="number" *ngSwitchCase="'number'" [(ngModel)]="objs[col]"> -->
+                    <nz-input [nzType]="'number'"  *ngSwitchCase="'number'" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]" [nzSize]="'large'">
+                    </nz-input>
+                    <!-- <textarea *ngSwitchCase="'textarea'" rows="3" cols="30" [(ngModel)]="objs[col]"></textarea> -->
+                    <nz-input *ngSwitchCase="'textarea'" [nzRows]="2" [nzType]="'textarea'" [ngModelOptions]="{standalone: true}" [(ngModel)]="objs[col]"  [nzSize]="'large'">
+                    </nz-input>
+                </div>
+                <div *ngIf="!colsAttributes[col]" class="d2">
+                    <nz-input [nzType]="'text'" [ngModelOptions]="{standalone: true}"  [(ngModel)]="objs[col]" [nzSize]="'large'">
+                    </nz-input>
+                    <!-- <input type="text" [(ngModel)]="objs[col]"> -->
+                </div>
+                <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">Please input your username!</div>
+            </div>
+        </div>
+    </form>

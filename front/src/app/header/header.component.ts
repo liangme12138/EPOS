@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
       // console.log(this.Back)
     }
     back(){
-      console.log(this.Back )
+      // console.log(this.Back )
       if(this.Back != undefined){
         this.router.navigate([this.Back])
       } else {

@@ -146,7 +146,7 @@
     }else{
           $sql = "select SQL_CALC_FOUND_ROWS  $table.*,category.CategoryName from $table,category where category.CategoryId=$table.Category";
         if($status== "search"){
-                $sql .= " and $table.foodName like '%$content%' or $table.sale like '%$content%' or $table.`Like` like '%$content%' or category.CategoryName like '%$content%'";
+                $sql .= " and ($table.foodName like '%$content%' or $table.sale like '%$content%' or $table.`Like` like '%$content%' or category.CategoryName like '%$content%')";
             }
         if($page && $pageitems){
             $no=($page-1)*$pageitems;

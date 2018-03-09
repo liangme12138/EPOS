@@ -14,7 +14,7 @@ export class NouseComponent implements OnInit {
   ngOnInit() {
     this.http.get('discount.php').then((res)=>{
       this.data = res;
-      console.log(this.data)
+      // console.log(this.data)
       
     })
   }
